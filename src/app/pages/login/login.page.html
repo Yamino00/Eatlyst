@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Accedi a Eatlyst</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="login-container">
+    <!-- Logo e Welcome -->
+    <div class="welcome-section">
+      <div class="logo">
+        <h1>🍽️ Eatlyst</h1>
+      </div>
+      <p class="welcome-text">Benvenuto! Accedi per pianificare i tuoi pasti</p>
+    </div>
+
+    <!-- Login Form -->
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Accedi</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- Email -->
+          <ion-item fill="outline" class="login-item">
+            <ion-icon name="mail-outline" slot="start"></ion-icon>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input 
+              type="email" 
+              formControlName="email"
+              placeholder="Inserisci la tua email"
+              [class.ion-invalid]="email?.touched && email?.invalid"
+              [class.ion-valid]="email?.touched && email?.valid">
+            </ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="email?.touched && email?.invalid">
+            <ion-text color="danger" *ngIf="email?.errors?.['required']">
+              L'email è richiesta
+            </ion-text>
+            <ion-text color="danger" *ngIf="email?.errors?.['email']">
+              Inserisci un'email valida
+            </ion-text>
+          </div>
+
+          <!-- Password -->
+          <ion-item fill="outline" class="login-item">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input 
+              [type]="showPassword ? 'text' : 'password'" 
+              formControlName="password"
+              placeholder="Inserisci la tua password"
+              [class.ion-invalid]="password?.touched && password?.invalid"
+              [class.ion-valid]="password?.touched && password?.valid">
+            </ion-input>
+            <ion-icon 
+              [name]="showPassword ? 'eye-off-outline' : 'eye-outline'" 
+              slot="end" 
+              (click)="togglePasswordVisibility()"
+              class="password-toggle">
+            </ion-icon>
+          </ion-item>
+          <div class="error-message" *ngIf="password?.touched && password?.invalid">
+            <ion-text color="danger" *ngIf="password?.errors?.['required']">
+              La password è richiesta
+            </ion-text>
+            <ion-text color="danger" *ngIf="password?.errors?.['minlength']">
+              La password deve essere di almeno 6 caratteri
+            </ion-text>
+          </div>
+
+          <!-- Forgot Password -->
+          <div class="forgot-password">
+            <ion-button fill="clear" size="small" (click)="forgotPassword()">
+              Password dimenticata?
+            </ion-button>
+          </div>
+
+          <!-- Login Button -->
+          <ion-button 
+            expand="block" 
+            type="submit" 
+            [disabled]="isLoading"
+            class="login-button">
+            <ion-spinner name="crescent" *ngIf="isLoading"></ion-spinner>
+            <span *ngIf="!isLoading">Accedi</span>
+          </ion-button>
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>oppure</span>
+        </div>
+
+        <!-- Google Login -->
+        <ion-button 
+          expand="block" 
+          fill="outline" 
+          (click)="signInWithGoogle()"
+          [disabled]="isLoading"
+          class="google-button">
+          <ion-icon name="logo-google" slot="start"></ion-icon>
+          Continua con Google
+        </ion-button>
+
+        <!-- Register Link -->
+        <div class="register-link">
+          <ion-text>
+            Non hai un account? 
+            <ion-button fill="clear" size="small" (click)="goToRegister()">
+              Registrati
+            </ion-button>
+          </ion-text>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
