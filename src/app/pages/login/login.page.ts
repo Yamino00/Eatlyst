@@ -117,17 +117,21 @@ export class LoginPage implements OnInit {
     await loading.present();
 
     try {
+      console.log('Google Sign-In: Starting...');
       await this.authService.signInWithGoogle();
+      console.log('Google Sign-In: Completed');
       
       await loading.dismiss();
+      console.log('Google Sign-In: Loading dismissed');
+      
       await this.showToast('Accesso effettuato con successo!', 'success');
+      console.log('Google Sign-In: Toast shown');
       
-      // Piccolo delay per permettere al Firebase di aggiornare lo stato
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
-      await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
+      // Forza il redirect usando window.location per Google Sign-In
+      console.log('Google Sign-In: Redirecting to /tabs/tab1');
+      window.location.href = '/tabs/tab1';
     } catch (error: any) {
+      console.error('Google Sign-In Error:', error);
       await loading.dismiss();
       await this.showToast(error.message || 'Errore durante l\'accesso con Google', 'danger');
     } finally {

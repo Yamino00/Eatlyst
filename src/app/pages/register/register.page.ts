@@ -211,11 +211,8 @@ export class RegisterPage implements OnInit {
       await loading.dismiss();
       await this.showToast('Account creato con successo!', 'success');
       
-      // Piccolo delay per permettere al Firebase di aggiornare lo stato
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
-      await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
+      // Forza il redirect usando window.location per Google Sign-In
+      window.location.href = '/tabs/tab1';
       
     } catch (error: any) {
       await loading.dismiss();
