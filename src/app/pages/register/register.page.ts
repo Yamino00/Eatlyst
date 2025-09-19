@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { 
   IonContent, 
   IonHeader, 
@@ -176,7 +177,10 @@ export class RegisterPage implements OnInit {
         await loading.dismiss();
         await this.showToast('Account creato con successo! Benvenuto su Eatlyst!', 'success');
         
-        // Naviga direttamente a tab1 senza ricaricare
+        // Piccolo delay per permettere al Firebase di aggiornare lo stato
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
         await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
         
       } catch (error: any) {
@@ -207,7 +211,10 @@ export class RegisterPage implements OnInit {
       await loading.dismiss();
       await this.showToast('Account creato con successo!', 'success');
       
-      // Naviga direttamente a tab1 senza ricaricare
+      // Piccolo delay per permettere al Firebase di aggiornare lo stato
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
       await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
       
     } catch (error: any) {

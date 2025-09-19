@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { take } from 'rxjs/operators';
 import { 
   IonContent, 
   IonHeader, 
@@ -91,7 +92,10 @@ export class LoginPage implements OnInit {
         await loading.dismiss();
         await this.showToast('Accesso effettuato con successo!', 'success');
         
-        // Naviga direttamente a tab1 senza ricaricare
+        // Piccolo delay per permettere al Firebase di aggiornare lo stato
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
         await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
       } catch (error: any) {
         await loading.dismiss();
@@ -118,7 +122,10 @@ export class LoginPage implements OnInit {
       await loading.dismiss();
       await this.showToast('Accesso effettuato con successo!', 'success');
       
-      // Naviga direttamente a tab1 senza ricaricare
+      // Piccolo delay per permettere al Firebase di aggiornare lo stato
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      // Naviga immediatamente - l'AuthGuard gestirà l'autenticazione
       await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
     } catch (error: any) {
       await loading.dismiss();
