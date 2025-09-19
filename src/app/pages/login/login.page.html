@@ -1,23 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-title>Accedi a Eatlyst</ion-title>
+<ion-header [translucent]="true" class="eatlyst-header">
+  <ion-toolbar>
+    <ion-title class="eatlyst-title">Accedi a Eatlyst</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="login-content">
   <div class="login-container">
+    
     <!-- Logo e Welcome -->
     <div class="welcome-section">
       <div class="logo">
         <h1>🍽️ Eatlyst</h1>
       </div>
-      <p class="welcome-text">Benvenuto! Accedi per pianificare i tuoi pasti</p>
+      <p class="welcome-text">
+        Benvenuto nella tua app per la pianificazione dei pasti
+      </p>
     </div>
 
     <!-- Login Form -->
     <ion-card class="login-card">
       <ion-card-header>
-        <ion-card-title>Accedi</ion-card-title>
+        <ion-card-title>Accedi al tuo account</ion-card-title>
       </ion-card-header>
       
       <ion-card-content>

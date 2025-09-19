@@ -175,7 +175,9 @@ export class RegisterPage implements OnInit {
         
         await loading.dismiss();
         await this.showToast('Account creato con successo! Benvenuto su Eatlyst!', 'success');
-        this.router.navigate(['/tabs']);
+        
+        // Naviga direttamente a tab1 senza ricaricare
+        await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
         
       } catch (error: any) {
         await loading.dismiss();
@@ -204,7 +206,9 @@ export class RegisterPage implements OnInit {
       
       await loading.dismiss();
       await this.showToast('Account creato con successo!', 'success');
-      this.router.navigate(['/tabs']);
+      
+      // Naviga direttamente a tab1 senza ricaricare
+      await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
       
     } catch (error: any) {
       await loading.dismiss();

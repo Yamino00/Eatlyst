@@ -6,6 +6,9 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+// Import degli stili personalizzati Eatlyst (deve essere prima delle regole CSS)
+@use './global-eatlyst.scss';
+
 html {
   @include mat.theme((
     color: (

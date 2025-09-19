@@ -90,7 +90,9 @@ export class LoginPage implements OnInit {
         
         await loading.dismiss();
         await this.showToast('Accesso effettuato con successo!', 'success');
-        this.router.navigate(['/tabs']);
+        
+        // Naviga direttamente a tab1 senza ricaricare
+        await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
       } catch (error: any) {
         await loading.dismiss();
         await this.showToast(error.message || 'Errore durante l\'accesso', 'danger');
@@ -115,7 +117,9 @@ export class LoginPage implements OnInit {
       
       await loading.dismiss();
       await this.showToast('Accesso effettuato con successo!', 'success');
-      this.router.navigate(['/tabs']);
+      
+      // Naviga direttamente a tab1 senza ricaricare
+      await this.router.navigate(['/tabs/tab1'], { replaceUrl: true });
     } catch (error: any) {
       await loading.dismiss();
       await this.showToast(error.message || 'Errore durante l\'accesso con Google', 'danger');

@@ -1,5 +1,5 @@
 .login-content {
-  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --background: var(--ion-background-color);
 }
 
 .login-container {
@@ -17,6 +17,9 @@
   
   .logo {
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fbbf24 0%, #fd7f28 50%, #e53e3e 100%);
     
     h1 {
       font-size: 3rem;
@@ -46,24 +49,6 @@
 
 .login-item {
   margin-bottom: 10px;
-  
-  &.ion-invalid {
-    --border-color: var(--ion-color-danger);
-  }
-  
-  &.ion-valid {
-    --border-color: var(--ion-color-success);
-  }
-}
-
-.password-toggle {
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .error-message {
@@ -112,10 +97,6 @@
   --border-radius: 12px;
   height: 48px;
   margin-bottom: 20px;
-  
-  ion-icon {
-    color: #4285f4;
-  }
 }
 
 .register-link {
@@ -126,32 +107,8 @@
   }
 }
 
-// Responsive design
 @media (max-width: 480px) {
-  .login-container {
-    padding: 15px;
-  }
-  
   .welcome-section .logo h1 {
     font-size: 2.5rem;
-  }
-  
-  .login-card {
-    max-width: 100%;
-  }
-}
-
-// Dark mode support
-@media (prefers-color-scheme: dark) {
-  .login-card {
-    background: rgba(30, 30, 30, 0.95);
-    
-    ion-card-title {
-      color: white;
-    }
-  }
-  
-  .divider span {
-    background: var(--ion-background-color);
   }
 }

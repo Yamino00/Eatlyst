@@ -1,2 +1,218 @@
-// For information on how to create your own theme, please see:
-// http://ionicframework.com/docs/theming/
+// Eatlyst - Custom Color Theme
+// Palette: Bianco (background principale), Rosso, Arancione, Giallo con gradazioni
+
+/** Ionic CSS Variables **/
+:root {
+  /** Primary Colors - Rosso come colore principale **/
+  --ion-color-primary: #e53e3e;
+  --ion-color-primary-rgb: 229, 62, 62;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #c93636;
+  --ion-color-primary-tint: #e85151;
+
+  /** Secondary Colors - Arancione **/
+  --ion-color-secondary: #fd7f28;
+  --ion-color-secondary-rgb: 253, 127, 40;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #df7023;
+  --ion-color-secondary-tint: #fd8c3e;
+
+  /** Tertiary Colors - Giallo **/
+  --ion-color-tertiary: #fbbf24;
+  --ion-color-tertiary-rgb: 251, 191, 36;
+  --ion-color-tertiary-contrast: #1f2937;
+  --ion-color-tertiary-contrast-rgb: 31, 41, 55;
+  --ion-color-tertiary-shade: #dd9f20;
+  --ion-color-tertiary-tint: #fbc53a;
+
+  /** Success - Verde naturale per complementare **/
+  --ion-color-success: #10b981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0e9f6e;
+  --ion-color-success-tint: #28c397;
+
+  /** Warning - Arancione più intenso **/
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #d88b0a;
+  --ion-color-warning-tint: #f6a824;
+
+  /** Danger - Rosso più intenso **/
+  --ion-color-danger: #dc2626;
+  --ion-color-danger-rgb: 220, 38, 38;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #c22121;
+  --ion-color-danger-tint: #e03a3a;
+
+  /** Dark Colors - Nero e celeste scuro per testi **/
+  --ion-color-dark: #000000;
+  --ion-color-dark-rgb: 0, 0, 0;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1a1a1a;
+  --ion-color-dark-tint: #333333;
+
+  /** Medium - Celeste scuro per testi secondari **/
+  --ion-color-medium: #1e3a8a;
+  --ion-color-medium-rgb: 30, 58, 138;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #1a337a;
+  --ion-color-medium-tint: #3554a3;
+
+  /** Light - Grigio chiarissimo per sfondi secondari **/
+  --ion-color-light: #f8fafc;
+  --ion-color-light-rgb: 248, 250, 252;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #e1e7ef;
+  --ion-color-light-tint: #f9fbfc;
+
+  /** Background personalizzato - Principalmente bianco **/
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+  
+  /** Surface Colors - Sfumature di bianco e grigio chiarissimo **/
+  --ion-color-step-50: #fafafa;
+  --ion-color-step-100: #f5f5f5;
+  --ion-color-step-150: #f0f0f0;
+  --ion-color-step-200: #ebebeb;
+  --ion-color-step-250: #e6e6e6;
+  --ion-color-step-300: #e0e0e0;
+  --ion-color-step-350: #dbdbdb;
+  --ion-color-step-400: #d6d6d6;
+  --ion-color-step-450: #d1d1d1;
+  --ion-color-step-500: #cccccc;
+  --ion-color-step-550: #c7c7c7;
+  --ion-color-step-600: #c2c2c2;
+  --ion-color-step-650: #bcbcbc;
+  --ion-color-step-700: #b7b7b7;
+  --ion-color-step-750: #b2b2b2;
+  --ion-color-step-800: #adadad;
+  --ion-color-step-850: #a8a8a8;
+  --ion-color-step-900: #a3a3a3;
+  --ion-color-step-950: #9e9e9e;
+
+  /** Text Colors - Nero per testi principali **/
+  --ion-text-color: #000000;
+  --ion-text-color-rgb: 0, 0, 0;
+  
+  /** Text Colors secondari - Celeste scuro **/
+  --ion-text-color-secondary: #1e3a8a;
+  --ion-text-color-secondary-rgb: 30, 58, 138;
+  
+  /** Border Colors **/
+  --ion-border-color: #e5e7eb;
+  
+  /** Card e Surface **/
+  --ion-card-background: #ffffff;
+  --ion-item-background: #ffffff;
+  --ion-toolbar-background: #ffffff;
+  --ion-tab-bar-background: #ffffff;
+}
+
+/** Custom Eatlyst Color Classes **/
+.eatlyst-red {
+  --ion-color-base: #e53e3e;
+  --ion-color-shade: #c93636;
+  --ion-color-tint: #e85151;
+}
+
+.eatlyst-red-light {
+  --ion-color-base: #fef2f2;
+  --ion-color-shade: #fed7d7;
+  --ion-color-tint: #fecaca;
+}
+
+.eatlyst-orange {
+  --ion-color-base: #fd7f28;
+  --ion-color-shade: #df7023;
+  --ion-color-tint: #fd8c3e;
+}
+
+.eatlyst-orange-light {
+  --ion-color-base: #fff7ed;
+  --ion-color-shade: #fed7aa;
+  --ion-color-tint: #fdba74;
+}
+
+.eatlyst-yellow {
+  --ion-color-base: #fbbf24;
+  --ion-color-shade: #dd9f20;
+  --ion-color-tint: #fbc53a;
+}
+
+.eatlyst-yellow-light {
+  --ion-color-base: #fefce8;
+  --ion-color-shade: #fef3c7;
+  --ion-color-tint: #fed7aa;
+}
+
+/** Gradients personalizzati per Eatlyst **/
+.eatlyst-gradient-warm {
+  background: linear-gradient(135deg, #fbbf24 0%, #fd7f28 50%, #e53e3e 100%);
+}
+
+.eatlyst-gradient-sunset {
+  background: linear-gradient(to right, #fd7f28, #fbbf24);
+}
+
+.eatlyst-gradient-fire {
+  background: linear-gradient(to bottom, #e53e3e, #fd7f28);
+}
+
+/** Dark Mode Support **/
+@media (prefers-color-scheme: dark) {
+  .ios body {
+    --ion-background-color: #1a1a1a;
+    --ion-background-color-rgb: 26, 26, 26;
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+    --ion-card-background: #2a2a2a;
+    --ion-item-background: #2a2a2a;
+    --ion-toolbar-background: #2a2a2a;
+    --ion-tab-bar-background: #2a2a2a;
+    --ion-border-color: #404040;
+  }
+
+  .md body {
+    --ion-background-color: #121212;
+    --ion-background-color-rgb: 18, 18, 18;
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+    --ion-card-background: #1e1e1e;
+    --ion-item-background: #1e1e1e;
+    --ion-toolbar-background: #1e1e1e;
+    --ion-tab-bar-background: #1e1e1e;
+    --ion-border-color: #333333;
+  }
+}
+
+/** Responsive Font Sizes **/
+:root {
+  --eatlyst-font-size-xs: 0.75rem;
+  --eatlyst-font-size-sm: 0.875rem;
+  --eatlyst-font-size-base: 1rem;
+  --eatlyst-font-size-lg: 1.125rem;
+  --eatlyst-font-size-xl: 1.25rem;
+  --eatlyst-font-size-2xl: 1.5rem;
+  --eatlyst-font-size-3xl: 1.875rem;
+  --eatlyst-font-size-4xl: 2.25rem;
+}
+
+/** Custom Spacing per Eatlyst **/
+:root {
+  --eatlyst-spacing-xs: 0.25rem;
+  --eatlyst-spacing-sm: 0.5rem;
+  --eatlyst-spacing-md: 1rem;
+  --eatlyst-spacing-lg: 1.5rem;
+  --eatlyst-spacing-xl: 2rem;
+  --eatlyst-spacing-2xl: 3rem;
+}

@@ -1,0 +1,388 @@
+/** EATLYST CUSTOM GLOBAL STYLES **/
+
+/* Typography personalizzata per Eatlyst */
+.eatlyst-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--ion-color-primary); /* Mantiene il rosso per i titoli creativi */
+  margin-bottom: var(--eatlyst-spacing-md);
+}
+
+.eatlyst-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: var(--ion-text-color); /* Nero per sottotitoli */
+  margin-bottom: var(--eatlyst-spacing-sm);
+}
+
+.eatlyst-body-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--ion-text-color); /* Nero per testi principali */
+  line-height: 1.6;
+}
+
+.eatlyst-secondary-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--ion-text-color-secondary); /* Celeste scuro per testi secondari */
+  line-height: 1.6;
+}
+
+/* Componenti personalizzati per Eatlyst */
+.eatlyst-card {
+  background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.1);
+  border: 1px solid var(--ion-color-step-100);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(229, 62, 62, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+.eatlyst-button-primary {
+  --background: var(--ion-color-primary);
+  --background-activated: var(--ion-color-primary-shade);
+  --background-focused: var(--ion-color-primary-shade);
+  --background-hover: var(--ion-color-primary-tint);
+  --color: white;
+  --border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.eatlyst-button-secondary {
+  --background: var(--ion-color-secondary);
+  --background-activated: var(--ion-color-secondary-shade);
+  --background-focused: var(--ion-color-secondary-shade);
+  --background-hover: var(--ion-color-secondary-tint);
+  --color: white;
+  --border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.eatlyst-button-outline {
+  --border-color: var(--ion-color-primary);
+  --color: var(--ion-color-primary);
+  --background: transparent;
+  --background-activated: var(--ion-color-primary);
+  --color-activated: white;
+  --border-radius: 8px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Headers personalizzati */
+.eatlyst-header {
+  --background: var(--ion-toolbar-background);
+  --color: var(--ion-color-primary);
+  --border-color: var(--ion-color-step-150);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab Bar personalizzata */
+.eatlyst-tab-bar {
+  --background: var(--ion-tab-bar-background);
+  --border: 1px solid var(--ion-color-step-150);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.eatlyst-tab-button {
+  --color: var(--ion-text-color-secondary); /* Celeste scuro per tab non selezionate */
+  --color-selected: var(--ion-color-primary); /* Rosso per tab selezionata */
+  
+  ion-icon {
+    font-size: 24px;
+  }
+  
+  ion-label {
+    font-weight: 500;
+    margin-top: 4px;
+  }
+}
+
+/* Form elements personalizzati */
+.eatlyst-input {
+  --background: var(--ion-item-background);
+  --border-color: var(--ion-color-step-200);
+  --border-radius: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --highlight-color-focused: var(--ion-color-primary);
+  
+  &.ion-valid {
+    --highlight-color-focused: var(--ion-color-success);
+  }
+  
+  &.ion-invalid {
+    --highlight-color-focused: var(--ion-color-danger);
+  }
+}
+
+/* Animazioni personalizzate per Eatlyst */
+@keyframes eatlyst-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes eatlyst-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.eatlyst-animate-fade-in {
+  animation: eatlyst-fade-in 0.5s ease-out;
+}
+
+.eatlyst-animate-slide-up {
+  animation: eatlyst-slide-up 0.3s ease-out;
+}
+
+/* Utility classes per spacing e layout */
+.eatlyst-padding-xs { padding: var(--eatlyst-spacing-xs); }
+.eatlyst-padding-sm { padding: var(--eatlyst-spacing-sm); }
+.eatlyst-padding-md { padding: var(--eatlyst-spacing-md); }
+.eatlyst-padding-lg { padding: var(--eatlyst-spacing-lg); }
+.eatlyst-padding-xl { padding: var(--eatlyst-spacing-xl); }
+
+.eatlyst-margin-xs { margin: var(--eatlyst-spacing-xs); }
+.eatlyst-margin-sm { margin: var(--eatlyst-spacing-sm); }
+.eatlyst-margin-md { margin: var(--eatlyst-spacing-md); }
+.eatlyst-margin-lg { margin: var(--eatlyst-spacing-lg); }
+.eatlyst-margin-xl { margin: var(--eatlyst-spacing-xl); }
+
+/* Text alignment utilities */
+.eatlyst-text-center { text-align: center; }
+.eatlyst-text-left { text-align: left; }
+.eatlyst-text-right { text-align: right; }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .eatlyst-hide-mobile { display: none !important; }
+}
+
+@media (min-width: 769px) {
+  .eatlyst-hide-desktop { display: none !important; }
+}
+
+/* Scrollbar personalizzata per Eatlyst */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ion-color-step-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ion-color-primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ion-color-primary-shade);
+}
+
+/* Stili specifici per le cards delle ricette */
+.recipe-card {
+  background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.1);
+  border: 1px solid var(--ion-color-step-100);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(229, 62, 62, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .recipe-content {
+    padding: var(--eatlyst-spacing-md);
+  }
+  
+  .recipe-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--ion-text-color); /* Nero per titoli ricette */
+    margin-bottom: var(--eatlyst-spacing-xs);
+  }
+  
+  .recipe-description {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: var(--ion-text-color-secondary); /* Celeste scuro per descrizioni */
+    line-height: 1.6;
+    font-size: var(--eatlyst-font-size-sm);
+  }
+  
+  .recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--eatlyst-spacing-sm);
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: var(--eatlyst-font-size-xs);
+      color: var(--ion-text-color-secondary); /* Celeste scuro per metadati */
+      
+      ion-icon {
+        font-size: 16px;
+        color: var(--ion-color-secondary); /* Arancione per icone */
+      }
+    }
+  }
+}
+
+/* Stili per il calendario della pianificazione */
+.calendar-container {
+  background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.1);
+  border: 1px solid var(--ion-color-step-100);
+  transition: all 0.3s ease;
+  padding: var(--eatlyst-spacing-md);
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(229, 62, 62, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--eatlyst-spacing-lg);
+    
+    .week-navigation {
+      display: flex;
+      gap: var(--eatlyst-spacing-sm);
+    }
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--eatlyst-spacing-sm);
+    
+    .day-column {
+      min-height: 300px;
+      border: 1px solid var(--ion-color-step-200);
+      border-radius: 8px;
+      padding: var(--eatlyst-spacing-sm);
+      
+      .day-header {
+        text-align: center;
+        font-weight: 600;
+        color: var(--ion-text-color); /* Nero per header giorni */
+        margin-bottom: var(--eatlyst-spacing-sm);
+      }
+      
+      .meal-slot {
+        margin-bottom: var(--eatlyst-spacing-sm);
+        padding: var(--eatlyst-spacing-xs);
+        border: 1px dashed var(--ion-color-step-300);
+        border-radius: 4px;
+        min-height: 60px;
+        
+        &.has-recipe {
+          border: 1px solid var(--ion-color-primary);
+          background: var(--ion-color-primary-tint);
+        }
+        
+        .meal-label {
+          font-size: var(--eatlyst-font-size-xs);
+          color: var(--ion-text-color-secondary); /* Celeste scuro per label pasti */
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+}
+
+/* Stili per la lista della spesa */
+.grocery-list {
+  background: var(--ion-card-background);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(229, 62, 62, 0.1);
+  border: 1px solid var(--ion-color-step-100);
+  transition: all 0.3s ease;
+  padding: var(--eatlyst-spacing-md);
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(229, 62, 62, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .grocery-category {
+    margin-bottom: var(--eatlyst-spacing-lg);
+    
+    .category-header {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: var(--ion-text-color); /* Nero per header categorie */
+      margin-bottom: var(--eatlyst-spacing-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--eatlyst-spacing-sm);
+      
+      ion-icon {
+        color: var(--ion-color-secondary); /* Arancione per icone */
+      }
+    }
+    
+    .grocery-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--eatlyst-spacing-sm);
+      border-bottom: 1px solid var(--ion-color-step-100);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      .item-info {
+        display: flex;
+        align-items: center;
+        gap: var(--eatlyst-spacing-sm);
+        
+        .item-name {
+          font-weight: 500;
+          color: var(--ion-text-color); /* Nero per nomi prodotti */
+        }
+        
+        .item-quantity {
+          font-size: var(--eatlyst-font-size-sm);
+          color: var(--ion-text-color-secondary); /* Celeste scuro per quantità */
+        }
+      }
+      
+      .item-actions {
+        display: flex;
+        gap: var(--eatlyst-spacing-xs);
+      }
+      
+      &.completed {
+        opacity: 0.6;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
