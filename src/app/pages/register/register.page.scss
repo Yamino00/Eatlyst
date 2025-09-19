@@ -1,0 +1,303 @@
+.register-content {
+  --background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.register-container {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 30px;
+  
+  .logo {
+    margin-bottom: 20px;
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  .welcome-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.register-card {
+  width: 100%;
+  max-width: 450px; // Leggermente più largo per i campi aggiuntivi
+  margin: 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.register-item {
+  margin-bottom: 10px;
+  
+  &.ion-invalid {
+    --border-color: var(--ion-color-danger);
+  }
+  
+  &.ion-valid {
+    --border-color: var(--ion-color-success);
+  }
+}
+
+.password-toggle {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.error-message {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  padding-left: 16px;
+}
+
+.terms-section {
+  margin: 15px 0;
+  
+  ion-checkbox {
+    --size: 18px;
+    --border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    height: auto;
+    min-height: auto;
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+}
+
+.register-button {
+  margin: 20px 0;
+  --border-radius: 12px;
+  height: 48px;
+  font-weight: 600;
+  
+  &[disabled] {
+    opacity: 0.6;
+  }
+}
+
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ion-color-medium);
+  }
+  
+  span {
+    background: white;
+    padding: 0 15px;
+    color: var(--ion-color-medium);
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.google-button {
+  --border-radius: 12px;
+  height: 48px;
+  margin-bottom: 20px;
+  
+  ion-icon {
+    color: #4285f4;
+  }
+}
+
+.login-link {
+  text-align: center;
+  
+  ion-text {
+    color: var(--ion-color-medium);
+  }
+}
+
+// Validazione visiva aggiuntiva per i campi
+ion-input {
+  &.ion-valid + ion-icon {
+    color: var(--ion-color-success);
+  }
+  
+  &.ion-invalid + ion-icon {
+    color: var(--ion-color-danger);
+  }
+}
+
+// Stili specifici per la sezione checkbox
+.terms-section {
+  padding: 15px;
+  background: rgba(var(--ion-color-light-rgb), 0.1);
+  border-radius: 8px;
+  margin: 15px 0;
+  
+  ion-checkbox {
+    vertical-align: top;
+    margin-top: 2px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--ion-color-dark);
+  }
+}
+
+// Progress indicator visuale per la forza della password
+.password-strength {
+  margin-top: 5px;
+  padding-left: 16px;
+  
+  .strength-bar {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ion-color-light);
+    overflow: hidden;
+    
+    .strength-fill {
+      height: 100%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+      
+      &.weak {
+        background: var(--ion-color-danger);
+        width: 33%;
+      }
+      
+      &.medium {
+        background: var(--ion-color-warning);
+        width: 66%;
+      }
+      
+      &.strong {
+        background: var(--ion-color-success);
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 480px) {
+  .register-container {
+    padding: 15px;
+  }
+  
+  .welcome-section .logo h1 {
+    font-size: 2.5rem;
+  }
+  
+  .register-card {
+    max-width: 100%;
+  }
+  
+  .terms-section {
+    padding: 12px;
+    
+    ion-button {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// Tablet e desktop
+@media (min-width: 768px) {
+  .register-container {
+    padding: 40px;
+  }
+  
+  .register-card {
+    max-width: 500px;
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .register-card {
+    background: rgba(30, 30, 30, 0.95);
+    
+    ion-card-title {
+      color: white;
+    }
+  }
+  
+  .divider span {
+    background: var(--ion-background-color);
+  }
+  
+  .terms-section {
+    background: rgba(255, 255, 255, 0.05);
+    
+    p {
+      color: var(--ion-color-light);
+    }
+  }
+}
+
+// Animazioni
+.register-card {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Focus states migliorati
+ion-item {
+  &.item-has-focus {
+    --background: rgba(var(--ion-color-primary-rgb), 0.05);
+  }
+}
+
+// Stili per messaggi di errore più evidenti
+.error-message {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px);
+  }
+}
