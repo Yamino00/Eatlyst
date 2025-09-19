@@ -216,32 +216,111 @@ export class RegisterPage implements OnInit {
 
   async showTerms(): Promise<void> {
     const alert = await this.alertController.create({
-      header: 'Termini e Condizioni',
+      header: 'Termini e Condizioni di Utilizzo',
+      cssClass: 'terms-alert',
       message: `
-        <p><strong>Termini di Utilizzo di Eatlyst</strong></p>
-        <p>1. Accettando questi termini, accetti di utilizzare l'app responsabilmente</p>
-        <p>2. I tuoi dati sono protetti secondo la nostra privacy policy</p>
-        <p>3. Le ricette condivise devono essere appropriate e sicure</p>
-        <p>4. Ci riserviamo il diritto di rimuovere contenuti inappropriati</p>
-        <p>5. L'app è fornita "come è" senza garanzie specifiche</p>
+📋 TERMINI DI UTILIZZO DI EATLYST
+
+Ultimo aggiornamento: Settembre 2025
+
+1. ACCETTAZIONE DEI TERMINI
+Utilizzando Eatlyst, accetti integralmente questi termini di utilizzo. Se non accetti questi termini, non utilizzare l'applicazione.
+
+2. DESCRIZIONE DEL SERVIZIO
+Eatlyst è un'applicazione per la pianificazione dei pasti e la gestione delle liste della spesa che ti aiuta a organizzare i tuoi pasti settimanali.
+
+3. RESPONSABILITÀ DELL'UTENTE
+• Fornire informazioni accurate durante la registrazione
+• Utilizzare l'app in modo responsabile e legale
+• Non condividere ricette protette da copyright
+• Rispettare gli altri utenti della community
+
+4. CONTENUTI E RICETTE
+• Le ricette condivise devono essere sicure e appropriate
+• Non pubblicare contenuti offensivi o inappropriati
+• Rispetta i diritti di proprietà intellettuale
+• Eatlyst si riserva il diritto di rimuovere contenuti inadeguati
+
+5. LIMITAZIONE DI RESPONSABILITÀ
+Eatlyst è fornita "così com'è" senza garanzie esplicite o implicite. Non siamo responsabili per eventuali danni derivanti dall'uso dell'applicazione.
+
+6. MODIFICHE AI TERMINI
+Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. Le modifiche saranno comunicate tramite l'app.
+
+7. CONTATTI
+Per domande sui termini, contattaci all'indirizzo: support@eatlyst.com
       `,
-      buttons: ['Chiudi']
+      buttons: [
+        {
+          text: 'Chiudi',
+          cssClass: 'terms-close-button'
+        }
+      ]
     });
     await alert.present();
   }
 
   async showPrivacyPolicy(): Promise<void> {
     const alert = await this.alertController.create({
-      header: 'Privacy Policy',
+      header: 'Informativa sulla Privacy',
+      cssClass: 'privacy-alert',
       message: `
-        <p><strong>Politica sulla Privacy di Eatlyst</strong></p>
-        <p>1. Raccogliamo solo i dati necessari per il servizio</p>
-        <p>2. I tuoi dati personali sono crittografati e protetti</p>
-        <p>3. Non condividiamo i tuoi dati con terze parti senza consenso</p>
-        <p>4. Puoi eliminare il tuo account e tutti i dati in qualsiasi momento</p>
-        <p>5. Utilizziamo Firebase per l'archiviazione sicura dei dati</p>
+🔒 INFORMATIVA SULLA PRIVACY DI EATLYST
+
+Ultimo aggiornamento: Settembre 2025
+
+1. DATI CHE RACCOGLIAMO
+
+Dati di Registrazione:
+• Nome, cognome ed email
+• Preferenze alimentari e allergie (facoltativo)
+• Foto profilo (facoltativo)
+
+Dati di Utilizzo:
+• Ricette create e salvate
+• Pianificazioni settimanali
+• Liste della spesa generate
+
+2. COME UTILIZZIAMO I TUOI DATI
+• Fornire e migliorare i nostri servizi
+• Personalizzare la tua esperienza
+• Sincronizzare i dati tra i dispositivi
+• Inviare notifiche importanti (solo se autorizzate)
+
+3. CONDIVISIONE DEI DATI
+• NON VENDIAMO i tuoi dati personali
+• Condividiamo solo ricette pubbliche che scegli di rendere pubbliche
+• Utilizziamo Google Firebase per l'archiviazione sicura
+• Possiamo condividere dati aggregati e anonimi per analisi
+
+4. SICUREZZA DEI DATI
+• Crittografia end-to-end per dati sensibili
+• Autenticazione sicura tramite Firebase Auth
+• Backup automatici per prevenire perdite di dati
+• Monitoraggio costante per attività sospette
+
+5. I TUOI DIRITTI
+• ACCESSO: Visualizzare tutti i tuoi dati
+• MODIFICA: Aggiornare le tue informazioni
+• CANCELLAZIONE: Eliminare il tuo account e tutti i dati
+• PORTABILITÀ: Esportare i tuoi dati
+
+6. COOKIE E TRACCIAMENTO
+Utilizziamo solo cookie tecnici essenziali per il funzionamento dell'app. Non utilizziamo cookie di tracciamento per pubblicità.
+
+7. CONTATTI PER LA PRIVACY
+Per domande sulla privacy o per esercitare i tuoi diritti:
+Email: privacy@eatlyst.com
+Responsabile Privacy: Data Protection Team
+
+Questa informativa è conforme al GDPR (Regolamento Generale sulla Protezione dei Dati) e alle normative italiane sulla privacy.
       `,
-      buttons: ['Chiudi']
+      buttons: [
+        {
+          text: 'Chiudi',
+          cssClass: 'privacy-close-button'
+        }
+      ]
     });
     await alert.present();
   }
