@@ -11,7 +11,7 @@ service cloud.firestore {
     match /recipes/{recipeId} {
       allow read: if true; // Public recipes
       allow create, update, delete: if request.auth != null && 
-        (resource == null || resource.data.authorId == request.auth.uid);
+        (resource == null || resource.data.autoreId == request.auth.uid);
     }
 
     // Weekly plans can only be accessed by the owner

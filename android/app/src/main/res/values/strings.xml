@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Eatlyst</string>
+    <string name="title_activity_main">Eatlyst</string>
+    <string name="package_name">com.eatlyst.app</string>
+    <string name="custom_url_scheme">com.eatlyst.app</string>
+</resources>

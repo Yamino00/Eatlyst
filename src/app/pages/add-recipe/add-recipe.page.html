@@ -1,0 +1,267 @@
+<!-- Header con gradiente appetitoso -->
+<ion-header [translucent]="true" class="header-gradient">
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1" color="light">
+        <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="header-title">Crea Ricetta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="saveDraft()" color="light" fill="clear">
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="recipe-content">
+  <!-- Hero Section con Upload Foto -->
+  <div class="hero-section">
+    <div class="photo-upload-container" (click)="selectPhoto()">
+      <div class="photo-placeholder" *ngIf="!selectedPhoto">
+        <ion-icon name="camera" class="camera-icon"></ion-icon>
+        <p class="upload-text">Aggiungi una foto<br><span class="upload-subtext">della tua ricetta</span></p>
+      </div>
+      <img [src]="selectedPhoto" *ngIf="selectedPhoto" class="recipe-photo" alt="Foto ricetta">
+      <div class="photo-overlay" *ngIf="selectedPhoto">
+        <ion-icon name="camera" color="light"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Content -->
+  <div class="form-container">
+    
+    <!-- Info Base Section -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <ion-icon name="restaurant" class="section-icon"></ion-icon>
+        Informazioni Base
+      </h2>
+      
+      <div class="form-group">
+        <ion-item lines="none" class="modern-input">
+          <ion-input
+            [(ngModel)]="recipe.nome"
+            placeholder="Inserisci il nome della ricetta..."
+            class="recipe-name-input"
+            (ionInput)="onNameChange($event)">
+          </ion-input>
+        </ion-item>
+        <div class="input-helper" *ngIf="nameSuggestions.length > 0">
+          <ion-chip 
+            *ngFor="let suggestion of nameSuggestions" 
+            (click)="selectNameSuggestion(suggestion)"
+            class="suggestion-chip">
+            {{suggestion}}
+          </ion-chip>
+        </div>
+      </div>
+
+      <!-- Quick Info Grid -->
+      <div class="quick-info-grid">
+        <div class="info-item">
+          <label class="info-label">Tempo</label>
+          <ion-select 
+            [(ngModel)]="recipe.tempoTotale" 
+            placeholder="Min"
+            class="time-select">
+            <ion-select-option value="15">15 min</ion-select-option>
+            <ion-select-option value="30">30 min</ion-select-option>
+            <ion-select-option value="45">45 min</ion-select-option>
+            <ion-select-option value="60">1 ora</ion-select-option>
+            <ion-select-option value="90">1h 30m</ion-select-option>
+            <ion-select-option value="120">2+ ore</ion-select-option>
+          </ion-select>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Porzioni</label>
+          <ion-input 
+            type="number" 
+            [(ngModel)]="recipe.porzioni" 
+            placeholder="4"
+            class="portions-input">
+          </ion-input>
+        </div>
+
+        <div class="info-item">
+          <label class="info-label">Difficoltà</label>
+          <div class="difficulty-buttons">
+            <ion-button 
+              [fill]="recipe.difficolta === 'facile' ? 'solid' : 'outline'"
+              color="success"
+              size="small"
+              (click)="setDifficulty('facile')">
+              Facile
+            </ion-button>
+            <ion-button 
+              [fill]="recipe.difficolta === 'media' ? 'solid' : 'outline'"
+              color="warning"
+              size="small"
+              (click)="setDifficulty('media')">
+              Media
+            </ion-button>
+            <ion-button 
+              [fill]="recipe.difficolta === 'difficile' ? 'solid' : 'outline'"
+              color="danger"
+              size="small"
+              (click)="setDifficulty('difficile')">
+              Difficile
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ingredienti Section -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <ion-icon name="nutrition" class="section-icon"></ion-icon>
+        Ingredienti
+      </h2>
+      
+      <!-- Add Ingredient -->
+      <div class="add-ingredient-container">
+        <div class="ingredient-input-row">
+          <ion-item lines="none" class="ingredient-item">
+            <ion-input
+              [(ngModel)]="newIngredient.nome"
+              placeholder="Es: Pasta, Pomodoro..."
+              (ionInput)="onIngredientChange($event)"
+              class="ingredient-name-input">
+            </ion-input>
+          </ion-item>
+          
+          <ion-item lines="none" class="quantity-item">
+            <ion-input
+              type="number"
+              [(ngModel)]="newIngredient.quantita"
+              placeholder="200"
+              class="quantity-input">
+            </ion-input>
+          </ion-item>
+          
+          <ion-item lines="none" class="unit-item">
+            <ion-select 
+              [(ngModel)]="newIngredient.unita" 
+              placeholder="gr"
+              class="unit-select">
+              <ion-select-option value="gr">gr</ion-select-option>
+              <ion-select-option value="kg">kg</ion-select-option>
+              <ion-select-option value="ml">ml</ion-select-option>
+              <ion-select-option value="l">l</ion-select-option>
+              <ion-select-option value="pz">pz</ion-select-option>
+              <ion-select-option value="q.b.">q.b.</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-button 
+            (click)="addIngredient()" 
+            color="eatlyst-orange"
+            shape="round"
+            size="small"
+            class="add-btn">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+
+        <!-- Ingredient Suggestions -->
+        <div class="suggestions-container" *ngIf="ingredientSuggestions.length > 0">
+          <ion-chip 
+            *ngFor="let suggestion of ingredientSuggestions" 
+            (click)="selectIngredientSuggestion(suggestion)"
+            class="ingredient-suggestion">
+            {{suggestion}}
+          </ion-chip>
+        </div>
+      </div>
+
+      <!-- Ingredients List -->
+      <div class="ingredients-list" *ngIf="recipe.ingredienti.length > 0">
+        <div 
+          *ngFor="let ingrediente of recipe.ingredienti; let i = index" 
+          class="ingredient-card">
+          <div class="ingredient-info">
+            <span class="ingredient-name">{{ingrediente.nome}}</span>
+            <span class="ingredient-quantity">{{ingrediente.quantita}} {{ingrediente.unita}}</span>
+          </div>
+          <ion-button 
+            (click)="removeIngredient(i)" 
+            fill="clear" 
+            color="medium"
+            size="small">
+            <ion-icon name="close"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Procedimento Section -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <ion-icon name="list" class="section-icon"></ion-icon>
+        Procedimento
+      </h2>
+      
+      <div class="form-group">
+        <ion-textarea
+          [(ngModel)]="recipe.procedimento"
+          placeholder="Descrivi i passaggi della tua ricetta...&#10;&#10;Esempio:&#10;1. Metti l'acqua a bollire&#10;2. Scola la pasta al dente&#10;3. Manteca con il formaggio..."
+          rows="8"
+          class="procedure-textarea">
+        </ion-textarea>
+      </div>
+    </div>
+
+    <!-- Status indicatori -->
+    <div class="status-indicators" *ngIf="isDraftSaved || !isFormValid()">
+      <div class="draft-status" *ngIf="isDraftSaved">
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+        <span>Bozza salvata alle {{ lastSaveTime }}</span>
+      </div>
+      <div class="validation-status" *ngIf="!isFormValid()">
+        <ion-icon name="information-circle" color="warning"></ion-icon>
+        <span>Completa tutti i campi per pubblicare</span>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <ion-button 
+        expand="block" 
+        color="medium" 
+        fill="outline"
+        (click)="saveDraft()"
+        class="draft-btn">
+        <ion-icon name="bookmark" slot="start"></ion-icon>
+        Salva Bozza
+      </ion-button>
+      
+      <ion-button 
+        expand="block" 
+        color="eatlyst-red"
+        (click)="publishRecipe()"
+        [disabled]="!isFormValid()"
+        class="publish-btn">
+        <ion-icon name="restaurant" slot="start"></ion-icon>
+        Pubblica Ricetta
+      </ion-button>
+      
+      <ion-button 
+        expand="block" 
+        color="danger"
+        fill="clear"
+        (click)="clearDraftAndExit()"
+        *ngIf="isDraftSaved"
+        class="clear-draft-btn">
+        <ion-icon name="trash" slot="start"></ion-icon>
+        Elimina Bozza
+      </ion-button>
+    </div>
+
+    <!-- Bottom Spacing -->
+    <div class="bottom-spacing"></div>
+  </div>
+</ion-content>
