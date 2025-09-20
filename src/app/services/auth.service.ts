@@ -288,15 +288,21 @@ export class AuthService {
 
   // Utility methods
   getCurrentUser(): User | null {
-    return this.currentUserSubject.value;
+    const user = this.currentUserSubject.value;
+    console.log('🔍 AuthService: getCurrentUser() chiamato, utente:', user ? user.id : 'nessuno');
+    return user;
   }
 
   getCurrentUserId(): string | null {
-    return this.currentUserSubject.value?.id || null;
+    const userId = this.currentUserSubject.value?.id || null;
+    console.log('🔍 AuthService: getCurrentUserId() chiamato, ID:', userId);
+    return userId;
   }
 
   isLoggedIn(): boolean {
-    return this.isAuthenticatedSubject.value;
+    const isAuthenticated = this.isAuthenticatedSubject.value;
+    console.log('🔍 AuthService: isLoggedIn() chiamato, autenticato:', isAuthenticated);
+    return isAuthenticated;
   }
 
   private handleAuthError(error: any): Error {

@@ -21,5 +21,9 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage),
     canActivate: [NoAuthGuard]
+  },  {
+    path: 'add-recipe',
+    loadComponent: () => import('./pages/add-recipe/add-recipe.page').then( m => m.AddRecipePage)
   },
+
 ];

@@ -1,17 +1,101 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
+  <ion-toolbar class="eatlyst-header">
+    <ion-title class="header-title">
+      Ricette
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToAddRecipe()" color="light">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+    <ion-toolbar class="eatlyst-header">
+      <ion-title size="large" class="header-title">Le Mie Ricette</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Floating Action Button per aggiungere ricetta -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToAddRecipe()" color="eatlyst-orange">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Contenuto delle ricette -->
+  <div class="recipes-container">
+    <!-- Loading state -->
+    <div class="loading-state" *ngIf="isLoading">
+      <ion-spinner name="circular"></ion-spinner>
+      <p>Caricamento ricette...</p>
+    </div>
+
+    <!-- Error state -->
+    <div class="error-state" *ngIf="error && !isLoading">
+      <ion-icon name="alert-circle-outline" class="error-icon"></ion-icon>
+      <h3>Errore</h3>
+      <p>{{ error }}</p>
+      <ion-button (click)="refreshRecipes()" color="primary">
+        <ion-icon name="refresh" slot="start"></ion-icon>
+        Riprova
+      </ion-button>
+    </div>
+
+    <!-- Stato vuoto -->
+    <div class="empty-state" *ngIf="!isLoading && !error && recipes.length === 0">
+      <ion-icon name="restaurant-outline" class="empty-icon"></ion-icon>
+      <h2>Nessuna ricetta ancora!</h2>
+      <p>Inizia creando la tua prima ricetta deliziosa</p>
+      <ion-button 
+        (click)="goToAddRecipe()" 
+        size="large"
+        class="cta-button">
+        <ion-icon name="add" slot="start"></ion-icon>
+        Crea la tua prima ricetta
+      </ion-button>
+    </div>
+
+    <!-- Lista ricette -->
+    <div class="recipes-grid" *ngIf="!isLoading && !error && recipes.length > 0">
+      <div *ngFor="let recipe of recipes" class="recipe-card">
+        <div class="recipe-image" [style.background-image]="recipe.fotoUrl ? 'url(' + recipe.fotoUrl + ')' : 'none'">
+          <div class="recipe-overlay">
+            <span class="difficulty-chip" [attr.data-color]="getDifficultyColor(recipe.difficolta)">
+              {{ getDifficultyLabel(recipe.difficolta) }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="recipe-header">
+          <h3 class="recipe-title">{{ recipe.nome }}</h3>
+          <div class="recipe-subtitle">
+            <span class="info-item">
+              <ion-icon name="time"></ion-icon>
+              {{ recipe.tempoTotale }} min
+            </span>
+            <span class="info-item">
+              <ion-icon name="people"></ion-icon>
+              {{ recipe.porzioni }} porzioni
+            </span>
+          </div>
+          <div class="recipe-date">
+            <ion-icon name="calendar-outline"></ion-icon>
+            {{ formatDate(recipe.dataCreazione) }}
+          </div>
+        </div>
+        
+        <div class="recipe-content">
+          <p class="recipe-preview">{{ recipe.procedimento | slice:0:100 }}{{ recipe.procedimento.length > 100 ? '...' : '' }}</p>
+          <div class="recipe-meta">
+            <span class="ingredients-count">
+              {{ recipe.ingredienti.length }} ingredienti
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

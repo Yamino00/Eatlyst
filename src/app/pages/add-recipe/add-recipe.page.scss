@@ -1,0 +1,92 @@
+// OTTIMIZZATO: CSS compatto per add-recipe
+
+// Header
+.header-gradient {
+  --background: linear-gradient(135deg, var(--eatlyst-red), var(--eatlyst-orange));
+  ion-toolbar { --background: transparent; --color: white; }
+  .header-title, ion-back-button, ion-button { color: white !important; --color: white; }
+}
+
+// Content base
+.recipe-content { --background: var(--ion-background-color); }
+.hero-section { height: 200px; margin: -56px -16px 24px -16px; }
+
+// Photo upload
+.photo-upload-container {
+  width: 100%; height: 100%; cursor: pointer; border-radius: 0 0 24px 24px;
+  background: linear-gradient(135deg, var(--eatlyst-orange), var(--eatlyst-yellow));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 32px rgba(var(--ion-color-primary-rgb), 0.3);
+}
+.photo-placeholder { text-align: center; color: white;
+  .camera-icon { font-size: 3rem; margin-bottom: 12px; }
+  .upload-text, .upload-subtext { color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+}
+.recipe-photo { width: 100%; height: 100%; object-fit: cover; }
+
+// Form structure
+.form-container { padding: 0 16px; max-width: 600px; margin: 0 auto; }
+.section-card {
+  background: var(--ion-card-background); border-radius: 20px; padding: 24px; margin-bottom: 24px;
+  box-shadow: var(--ion-card-box-shadow); border: 1px solid var(--ion-border-color);
+}
+.section-title { display: flex; align-items: center; gap: 12px; font-size: 1.3rem; font-weight: 700; margin: 0 0 20px 0; }
+
+// Inputs
+.modern-input {
+  --background: var(--ion-item-background); --border-radius: 12px; --padding-start: 16px; --padding-end: 16px;
+  margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+// Suggestions
+.name-suggestions, .ingredient-suggestions { margin: -12px 0 16px 0; }
+.suggestion-chip {
+  display: inline-block; background: linear-gradient(135deg, var(--eatlyst-orange), var(--eatlyst-yellow));
+  color: white; padding: 8px 16px; margin: 4px 8px 4px 0; border-radius: 20px; font-size: 0.9rem; cursor: pointer;
+}
+
+// Difficulty
+.difficulty-selector { display: flex; gap: 12px; margin-bottom: 20px; }
+.difficulty-option {
+  flex: 1; text-align: center; padding: 16px 12px; border-radius: 12px;
+  background: var(--ion-color-light); color: var(--ion-color-medium); cursor: pointer;
+  &.selected { background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-secondary)); color: white; }
+}
+
+// Quick info
+.quick-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.info-item { text-align: center; }
+
+// Ingredients
+.ingredient-input-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.ingredient-list { margin-top: 20px; }
+.ingredient-item {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--ion-color-light); padding: 12px 16px; margin-bottom: 8px; border-radius: 12px;
+}
+
+// Status
+.status-indicators { margin-bottom: 20px; }
+.draft-status, .validation-status {
+  display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; margin-bottom: 8px;
+}
+.draft-status { background: rgba(var(--ion-color-success-rgb), 0.1); color: var(--ion-color-success); }
+.validation-status { background: rgba(var(--ion-color-warning-rgb), 0.1); color: var(--ion-color-warning); }
+
+// Buttons
+.action-buttons { margin-top: 40px; }
+.draft-btn { --border-radius: 16px; font-weight: 600; height: 56px; }
+.publish-btn {
+  --border-radius: 16px; font-weight: 700; height: 60px;
+  background: linear-gradient(135deg, var(--eatlyst-red), var(--eatlyst-orange));
+  color: white; box-shadow: 0 8px 24px rgba(var(--ion-color-primary-rgb), 0.3);
+}
+.clear-draft-btn { --border-radius: 16px; height: 48px; margin-top: 8px; }
+
+.bottom-spacing { height: 100px; }
+
+// Responsive
+@media (max-width: 768px) {
+  .ingredient-input-row { grid-template-columns: 1fr; }
+  .quick-info-grid { grid-template-columns: 1fr; }
+}
