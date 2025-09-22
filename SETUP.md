@@ -1,4 +1,4 @@
-# 🚀 Guida Setup Eatlyst - Nuovo Dispositivo
+# 🚀 Guida Setup Eatlyst
 
 ## 📋 Prerequisiti
 
