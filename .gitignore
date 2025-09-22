@@ -68,3 +68,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Firebase configuration files with real credentials
+# These files contain sensitive API keys and should not be committed
+src/environments/*.local.ts
+src/environments/firebase.config.local.ts

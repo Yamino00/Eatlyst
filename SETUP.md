@@ -32,19 +32,30 @@ cd Eatlyst
 npm install
 ```
 
-### 3. Verifica Configurazione Firebase
-Controlla che il file `src/environments/firebase.config.ts` contenga le configurazioni corrette:
-```typescript
-export const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  // ... altre configurazioni
-};
+### 3. Configurazione Firebase - IMPORTANTE! 🔐
+⚠️ **NUOVO SISTEMA DI CONFIGURAZIONE SICURA**
+
+Il progetto ora utilizza un sistema che mantiene le chiavi Firebase fuori dal controllo versione per sicurezza.
+
+#### Opzione A: Primi Passi
+```bash
+# Crea i file locali con credenziali reali
+cp src/environments/environment.ts src/environments/environment.local.ts
+cp src/environments/environment.prod.ts src/environments/environment.prod.local.ts
 ```
+
+Modifica i file `.local.ts` con le vere credenziali Firebase ricevute dal team.
+
+#### Opzione B: File Esistenti
+Se hai già i file `.local.ts` configurati, salta questo passaggio.
+
+**Dettagli completi**: Vedi `FIREBASE_SETUP.md` per istruzioni complete.
 
 ### 4. Test Ambiente di Sviluppo
 ```bash
+# Usa configurazione con credenziali reali
+npm run serve:local
+# oppure per sviluppo senza credenziali reali
 ionic serve
 ```
 L'app dovrebbe aprirsi su `http://localhost:8100`
@@ -137,15 +148,18 @@ I seguenti file/cartelle NON sono nel repository e si generano automaticamente:
 ## 🔐 File Sensibili
 
 ### File di Configurazione Importanti
-- `src/environments/firebase.config.ts` - Configurazione Firebase
+- `src/environments/firebase.config.ts` - Template configurazione Firebase (safe to commit)
+- `src/environments/*.local.ts` - Configurazioni con credenziali reali (NON committare)
 - `capacitor.config.ts` - Configurazione Capacitor
 - `firebase.json` - Configurazione Firebase CLI
+- `FIREBASE_SETUP.md` - Guida dettagliata setup Firebase
 
 ### Sicurezza
 ⚠️ **IMPORTANTE**: Non committare mai:
-- Chiavi API private
+- Chiavi API private (ora gestite via file `.local.ts`)
 - Certificati di sviluppo
 - File con credenziali personali
+- File `src/environments/*.local.ts` (automaticamente esclusi da .gitignore)
 
 ## 🎨 Tema e Design
 
