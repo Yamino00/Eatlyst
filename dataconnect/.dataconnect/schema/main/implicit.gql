@@ -1,0 +1,62 @@
+extend type GroceryListItem {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "GroceryListItem", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `GroceryListItem`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID @fdc_generated(from: "GroceryListItem.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Ingredient {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Ingredient", purpose: IMPLICIT_KEY_FIELD)
+}
+extend type MealPlan {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "MealPlan", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `MealPlan`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID @fdc_generated(from: "MealPlan.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type PlannedMeal {
+  """
+  ✨ Implicit foreign key field based on `PlannedMeal`.`mealPlan`. It must match the value of `MealPlan`.`id`. See `@ref` for how to customize it.
+  """
+  mealPlanId: UUID! @fdc_generated(from: "PlannedMeal.mealPlan", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `PlannedMeal`.`recipe`. It must match the value of `Recipe`.`id`. See `@ref` for how to customize it.
+  """
+  recipeId: UUID! @fdc_generated(from: "PlannedMeal.recipe", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Recipe {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Recipe", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Recipe`.`author`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  authorId: UUID @fdc_generated(from: "Recipe.author", purpose: IMPLICIT_REF_FIELD)
+}
+extend type RecipeIngredient {
+  """
+  ✨ Implicit foreign key field based on `RecipeIngredient`.`recipe`. It must match the value of `Recipe`.`id`. See `@ref` for how to customize it.
+  """
+  recipeId: UUID! @fdc_generated(from: "RecipeIngredient.recipe", purpose: IMPLICIT_REF_FIELD)
+  """
+  ✨ Implicit foreign key field based on `RecipeIngredient`.`ingredient`. It must match the value of `Ingredient`.`id`. See `@ref` for how to customize it.
+  """
+  ingredientId: UUID! @fdc_generated(from: "RecipeIngredient.ingredient", purpose: IMPLICIT_REF_FIELD)
+}
+extend type User {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "User", purpose: IMPLICIT_KEY_FIELD)
+}

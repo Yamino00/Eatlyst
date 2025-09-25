@@ -1,0 +1,363 @@
+extend type Query {
+  """
+  ✨ Look up a single `GroceryListItem` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  groceryListItem(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: GroceryListItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: GroceryListItem_FirstRow
+  ): GroceryListItem @fdc_generated(from: "GroceryListItem", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Ingredient` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  ingredient(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Ingredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Ingredient_FirstRow
+  ): Ingredient @fdc_generated(from: "Ingredient", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `MealPlan` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  mealPlan(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: MealPlan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: MealPlan_FirstRow
+  ): MealPlan @fdc_generated(from: "MealPlan", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `PlannedMeal` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  plannedMeal(
+    """
+    The key used to identify the object.
+    """
+    key: PlannedMeal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PlannedMeal_FirstRow
+  ): PlannedMeal @fdc_generated(from: "PlannedMeal", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Recipe` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  recipe(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Recipe_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Recipe_FirstRow
+  ): Recipe @fdc_generated(from: "Recipe", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `RecipeIngredient` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  recipeIngredient(
+    """
+    The key used to identify the object.
+    """
+    key: RecipeIngredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RecipeIngredient_FirstRow
+  ): RecipeIngredient @fdc_generated(from: "RecipeIngredient", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ List `GroceryListItem` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  groceryListItems(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: GroceryListItem_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [GroceryListItem_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: GroceryListItem_Having
+  ): [GroceryListItem!]! @fdc_generated(from: "GroceryListItem", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Ingredient` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  ingredients(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Ingredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Ingredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Ingredient_Having
+  ): [Ingredient!]! @fdc_generated(from: "Ingredient", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `MealPlan` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  mealPlans(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: MealPlan_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [MealPlan_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: MealPlan_Having
+  ): [MealPlan!]! @fdc_generated(from: "MealPlan", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `PlannedMeal` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  plannedMeals(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: PlannedMeal_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [PlannedMeal_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: PlannedMeal_Having
+  ): [PlannedMeal!]! @fdc_generated(from: "PlannedMeal", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Recipe` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  recipes(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Recipe_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Recipe_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Recipe_Having
+  ): [Recipe!]! @fdc_generated(from: "Recipe", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `RecipeIngredient` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  recipeIngredients(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RecipeIngredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RecipeIngredient_Having
+  ): [RecipeIngredient!]! @fdc_generated(from: "RecipeIngredient", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+}

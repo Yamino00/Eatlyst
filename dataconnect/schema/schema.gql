@@ -1,0 +1,63 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  photoUrl: String
+}
+
+type Recipe @table {
+  title: String!
+  instructions: String!
+  prepTime: Int!
+  cookTime: Int!
+  servings: Int!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+  cuisine: String
+  dietaryRestrictions: [String]
+  shared: Boolean
+  author: User
+}
+
+type Ingredient @table {
+  name: String!
+  category: String
+}
+
+type RecipeIngredient @table(key: ["recipe", "ingredient"]) {
+  recipe: Recipe!
+  ingredient: Ingredient!
+  quantity: Float!
+  unit: String!
+  notes: String
+}
+
+type MealPlan @table {
+  user: User
+  name: String!
+  startDate: Date!
+  endDate: Date!
+  createdAt: Timestamp!
+  description: String
+}
+
+type PlannedMeal @table(key: ["mealPlan", "recipe", "date", "mealType"]) {
+  mealPlan: MealPlan!
+  recipe: Recipe!
+  date: Date!
+  mealType: String!
+  notes: String
+}
+
+type GroceryListItem @table {
+  user: User
+  mealPlanId: UUID!
+  ingredientName: String!
+  quantity: Float!
+  unit: String!
+  purchased: Boolean
+  cost: Float
+  category: String
+  custom: Boolean
+}

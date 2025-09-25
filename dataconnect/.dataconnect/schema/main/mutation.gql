@@ -1,0 +1,766 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `GroceryListItem` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  groceryListItem_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: GroceryListItem_Data!
+  ): GroceryListItem_KeyOutput! @fdc_generated(from: "GroceryListItem", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Ingredient` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  ingredient_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Ingredient_Data!
+  ): Ingredient_KeyOutput! @fdc_generated(from: "Ingredient", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `MealPlan` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  mealPlan_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: MealPlan_Data!
+  ): MealPlan_KeyOutput! @fdc_generated(from: "MealPlan", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `PlannedMeal` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  plannedMeal_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: PlannedMeal_Data!
+  ): PlannedMeal_KeyOutput! @fdc_generated(from: "PlannedMeal", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Recipe` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recipe_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Recipe_Data!
+  ): Recipe_KeyOutput! @fdc_generated(from: "Recipe", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `RecipeIngredient` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recipeIngredient_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: RecipeIngredient_Data!
+  ): RecipeIngredient_KeyOutput! @fdc_generated(from: "RecipeIngredient", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `GroceryListItem` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  groceryListItem_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [GroceryListItem_Data!]!
+  ): [GroceryListItem_KeyOutput!]! @fdc_generated(from: "GroceryListItem", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Ingredient` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  ingredient_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Ingredient_Data!]!
+  ): [Ingredient_KeyOutput!]! @fdc_generated(from: "Ingredient", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `MealPlan` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  mealPlan_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [MealPlan_Data!]!
+  ): [MealPlan_KeyOutput!]! @fdc_generated(from: "MealPlan", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `PlannedMeal` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  plannedMeal_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [PlannedMeal_Data!]!
+  ): [PlannedMeal_KeyOutput!]! @fdc_generated(from: "PlannedMeal", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Recipe` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recipe_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Recipe_Data!]!
+  ): [Recipe_KeyOutput!]! @fdc_generated(from: "Recipe", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `RecipeIngredient` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  recipeIngredient_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [RecipeIngredient_Data!]!
+  ): [RecipeIngredient_KeyOutput!]! @fdc_generated(from: "RecipeIngredient", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `GroceryListItem` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `GroceryListItem`.
+  """
+  groceryListItem_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: GroceryListItem_Data!
+  ): GroceryListItem_KeyOutput! @fdc_generated(from: "GroceryListItem", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Ingredient` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Ingredient`.
+  """
+  ingredient_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Ingredient_Data!
+  ): Ingredient_KeyOutput! @fdc_generated(from: "Ingredient", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `MealPlan` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `MealPlan`.
+  """
+  mealPlan_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: MealPlan_Data!
+  ): MealPlan_KeyOutput! @fdc_generated(from: "MealPlan", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `PlannedMeal` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `PlannedMeal`.
+  """
+  plannedMeal_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: PlannedMeal_Data!
+  ): PlannedMeal_KeyOutput! @fdc_generated(from: "PlannedMeal", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Recipe` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Recipe`.
+  """
+  recipe_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Recipe_Data!
+  ): Recipe_KeyOutput! @fdc_generated(from: "Recipe", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `RecipeIngredient` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RecipeIngredient`.
+  """
+  recipeIngredient_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: RecipeIngredient_Data!
+  ): RecipeIngredient_KeyOutput! @fdc_generated(from: "RecipeIngredient", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `GroceryListItem` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `GroceryListItem`.
+  """
+  groceryListItem_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [GroceryListItem_Data!]!
+  ): [GroceryListItem_KeyOutput!]! @fdc_generated(from: "GroceryListItem", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Ingredient` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Ingredient`.
+  """
+  ingredient_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Ingredient_Data!]!
+  ): [Ingredient_KeyOutput!]! @fdc_generated(from: "Ingredient", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `MealPlan` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `MealPlan`.
+  """
+  mealPlan_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [MealPlan_Data!]!
+  ): [MealPlan_KeyOutput!]! @fdc_generated(from: "MealPlan", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `PlannedMeal` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `PlannedMeal`.
+  """
+  plannedMeal_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [PlannedMeal_Data!]!
+  ): [PlannedMeal_KeyOutput!]! @fdc_generated(from: "PlannedMeal", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Recipe` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Recipe`.
+  """
+  recipe_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Recipe_Data!]!
+  ): [Recipe_KeyOutput!]! @fdc_generated(from: "Recipe", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `RecipeIngredient` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `RecipeIngredient`.
+  """
+  recipeIngredient_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [RecipeIngredient_Data!]!
+  ): [RecipeIngredient_KeyOutput!]! @fdc_generated(from: "RecipeIngredient", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `GroceryListItem` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `GroceryListItem` or `null` if not found.
+  """
+  groceryListItem_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: GroceryListItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: GroceryListItem_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: GroceryListItem_Data!
+  ): GroceryListItem_KeyOutput @fdc_generated(from: "GroceryListItem", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Ingredient` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Ingredient` or `null` if not found.
+  """
+  ingredient_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Ingredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Ingredient_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Ingredient_Data!
+  ): Ingredient_KeyOutput @fdc_generated(from: "Ingredient", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `MealPlan` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `MealPlan` or `null` if not found.
+  """
+  mealPlan_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: MealPlan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: MealPlan_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: MealPlan_Data!
+  ): MealPlan_KeyOutput @fdc_generated(from: "MealPlan", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `PlannedMeal` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `PlannedMeal` or `null` if not found.
+  """
+  plannedMeal_update(
+    """
+    The key used to identify the object.
+    """
+    key: PlannedMeal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PlannedMeal_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: PlannedMeal_Data!
+  ): PlannedMeal_KeyOutput @fdc_generated(from: "PlannedMeal", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Recipe` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Recipe` or `null` if not found.
+  """
+  recipe_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Recipe_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Recipe_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Recipe_Data!
+  ): Recipe_KeyOutput @fdc_generated(from: "Recipe", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `RecipeIngredient` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `RecipeIngredient` or `null` if not found.
+  """
+  recipeIngredient_update(
+    """
+    The key used to identify the object.
+    """
+    key: RecipeIngredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RecipeIngredient_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: RecipeIngredient_Data!
+  ): RecipeIngredient_KeyOutput @fdc_generated(from: "RecipeIngredient", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `GroceryListItem` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  groceryListItem_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: GroceryListItem_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: GroceryListItem_Data!
+  ): Int! @fdc_generated(from: "GroceryListItem", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Ingredient` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  ingredient_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Ingredient_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Ingredient_Data!
+  ): Int! @fdc_generated(from: "Ingredient", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `MealPlan` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  mealPlan_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: MealPlan_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: MealPlan_Data!
+  ): Int! @fdc_generated(from: "MealPlan", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `PlannedMeal` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  plannedMeal_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: PlannedMeal_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: PlannedMeal_Data!
+  ): Int! @fdc_generated(from: "PlannedMeal", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Recipe` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  recipe_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Recipe_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Recipe_Data!
+  ): Int! @fdc_generated(from: "Recipe", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `RecipeIngredient` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  recipeIngredient_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: RecipeIngredient_Data!
+  ): Int! @fdc_generated(from: "RecipeIngredient", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `GroceryListItem` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  groceryListItem_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: GroceryListItem_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: GroceryListItem_FirstRow
+  ): GroceryListItem_KeyOutput @fdc_generated(from: "GroceryListItem", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Ingredient` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  ingredient_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Ingredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Ingredient_FirstRow
+  ): Ingredient_KeyOutput @fdc_generated(from: "Ingredient", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `MealPlan` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  mealPlan_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: MealPlan_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: MealPlan_FirstRow
+  ): MealPlan_KeyOutput @fdc_generated(from: "MealPlan", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `PlannedMeal` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  plannedMeal_delete(
+    """
+    The key used to identify the object.
+    """
+    key: PlannedMeal_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: PlannedMeal_FirstRow
+  ): PlannedMeal_KeyOutput @fdc_generated(from: "PlannedMeal", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Recipe` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  recipe_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Recipe_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Recipe_FirstRow
+  ): Recipe_KeyOutput @fdc_generated(from: "Recipe", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `RecipeIngredient` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  recipeIngredient_delete(
+    """
+    The key used to identify the object.
+    """
+    key: RecipeIngredient_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: RecipeIngredient_FirstRow
+  ): RecipeIngredient_KeyOutput @fdc_generated(from: "RecipeIngredient", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `GroceryListItem` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  groceryListItem_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: GroceryListItem_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Ingredient` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  ingredient_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Ingredient_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Ingredient", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `MealPlan` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  mealPlan_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: MealPlan_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `PlannedMeal` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  plannedMeal_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: PlannedMeal_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Recipe` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  recipe_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Recipe_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `RecipeIngredient` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  recipeIngredient_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}
