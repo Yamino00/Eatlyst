@@ -1,0 +1,1003 @@
+extend type GroceryListItem {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "GroceryListItem", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table.
+  """
+  _count: Int! @fdc_generated(from: "GroceryListItem.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `category` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  category_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.category", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `cost` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  cost_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.cost", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `custom` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  custom_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.custom", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `ingredientName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  ingredientName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.ingredientName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `mealPlanId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mealPlanId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.mealPlanId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `purchased` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  purchased_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.purchased", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `quantity` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  quantity_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.quantity", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `unit` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  unit_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.unit", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `GroceryListItem` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "GroceryListItem.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `cost` field in the `GroceryListItem` table.
+  """
+  cost_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "GroceryListItem.cost", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `quantity` field in the `GroceryListItem` table.
+  """
+  quantity_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "GroceryListItem.quantity", purpose: QUERY_SUM)
+  """
+  ✨ Average the `cost` field in the `GroceryListItem` table.
+  """
+  cost_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "GroceryListItem.cost", purpose: QUERY_AVG)
+  """
+  ✨ Average the `quantity` field in the `GroceryListItem` table.
+  """
+  quantity_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "GroceryListItem.quantity", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `cost` field in the `GroceryListItem` table.
+  """
+  cost_min: Float @fdc_generated(from: "GroceryListItem.cost", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `quantity` field in the `GroceryListItem` table.
+  """
+  quantity_min: Float @fdc_generated(from: "GroceryListItem.quantity", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `cost` field in the `GroceryListItem` table.
+  """
+  cost_max: Float @fdc_generated(from: "GroceryListItem.cost", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `quantity` field in the `GroceryListItem` table.
+  """
+  quantity_max: Float @fdc_generated(from: "GroceryListItem.quantity", purpose: QUERY_MAX)
+}
+extend type Ingredient {
+  """
+  ✨ List `RecipeIngredient` objects in a one-to-many relationship (where `RecipeIngredient`.`ingredient` is this object).
+  """
+  recipeIngredients_on_ingredient(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RecipeIngredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RecipeIngredient_Having
+  ): [RecipeIngredient!]! @fdc_generated(from: "RecipeIngredient.ingredient", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Recipe` objects using `RecipeIngredient` as the join table (a `RecipeIngredient` object exists where its `ingredient` is this and its `recipe` is that).
+  """
+  recipes_via_RecipeIngredient(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RecipeIngredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RecipeIngredient_Having
+  ): [Recipe!]! @fdc_generated(from: "RecipeIngredient", purpose: QUERY_MULTIPLE_MANY_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Ingredient", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Ingredient` table.
+  """
+  _count: Int! @fdc_generated(from: "Ingredient.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Ingredient` table where the `category` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  category_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Ingredient.category", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Ingredient` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Ingredient.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Ingredient` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Ingredient.name", purpose: QUERY_COUNT)
+}
+extend type MealPlan {
+  """
+  ✨ List `PlannedMeal` objects in a one-to-many relationship (where `PlannedMeal`.`mealPlan` is this object).
+  """
+  plannedMeals_on_mealPlan(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: PlannedMeal_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [PlannedMeal_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: PlannedMeal_Having
+  ): [PlannedMeal!]! @fdc_generated(from: "PlannedMeal.mealPlan", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "MealPlan", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `MealPlan` table.
+  """
+  _count: Int! @fdc_generated(from: "MealPlan.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `endDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  endDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.endDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `name` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  name_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.name", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `startDate` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  startDate_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.startDate", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `MealPlan` table where the `userId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  userId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "MealPlan.userId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `MealPlan` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "MealPlan.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `endDate` field in the `MealPlan` table.
+  """
+  endDate_min: Date @fdc_generated(from: "MealPlan.endDate", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `startDate` field in the `MealPlan` table.
+  """
+  startDate_min: Date @fdc_generated(from: "MealPlan.startDate", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `MealPlan` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "MealPlan.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `endDate` field in the `MealPlan` table.
+  """
+  endDate_max: Date @fdc_generated(from: "MealPlan.endDate", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `startDate` field in the `MealPlan` table.
+  """
+  startDate_max: Date @fdc_generated(from: "MealPlan.startDate", purpose: QUERY_MAX)
+}
+extend type PlannedMeal {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "PlannedMeal", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table.
+  """
+  _count: Int! @fdc_generated(from: "PlannedMeal.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table where the `date` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  date_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal.date", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table where the `mealPlanId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mealPlanId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal.mealPlanId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table where the `mealType` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  mealType_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal.mealType", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table where the `notes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  notes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal.notes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `PlannedMeal` table where the `recipeId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  recipeId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "PlannedMeal.recipeId", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `date` field in the `PlannedMeal` table.
+  """
+  date_min: Date @fdc_generated(from: "PlannedMeal.date", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `date` field in the `PlannedMeal` table.
+  """
+  date_max: Date @fdc_generated(from: "PlannedMeal.date", purpose: QUERY_MAX)
+}
+extend type Recipe {
+  """
+  ✨ List `PlannedMeal` objects in a one-to-many relationship (where `PlannedMeal`.`recipe` is this object).
+  """
+  plannedMeals_on_recipe(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: PlannedMeal_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [PlannedMeal_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: PlannedMeal_Having
+  ): [PlannedMeal!]! @fdc_generated(from: "PlannedMeal.recipe", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `RecipeIngredient` objects in a one-to-many relationship (where `RecipeIngredient`.`recipe` is this object).
+  """
+  recipeIngredients_on_recipe(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RecipeIngredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RecipeIngredient_Having
+  ): [RecipeIngredient!]! @fdc_generated(from: "RecipeIngredient.recipe", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Ingredient` objects using `RecipeIngredient` as the join table (a `RecipeIngredient` object exists where its `recipe` is this and its `ingredient` is that).
+  """
+  ingredients_via_RecipeIngredient(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: RecipeIngredient_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [RecipeIngredient_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: RecipeIngredient_Having
+  ): [Ingredient!]! @fdc_generated(from: "RecipeIngredient", purpose: QUERY_MULTIPLE_MANY_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "Recipe", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `Recipe` table.
+  """
+  _count: Int! @fdc_generated(from: "Recipe.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `authorId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  authorId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.authorId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `cookTime` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  cookTime_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.cookTime", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `cuisine` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  cuisine_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.cuisine", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `description` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  description_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.description", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `imageUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  imageUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.imageUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `instructions` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  instructions_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.instructions", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `prepTime` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  prepTime_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.prepTime", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `servings` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  servings_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.servings", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `shared` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  shared_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.shared", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `Recipe` table where the `title` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  title_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "Recipe.title", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `cookTime` field in the `Recipe` table.
+  """
+  cookTime_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Recipe.cookTime", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `prepTime` field in the `Recipe` table.
+  """
+  prepTime_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Recipe.prepTime", purpose: QUERY_SUM)
+  """
+  ✨ Sum the `servings` field in the `Recipe` table.
+  """
+  servings_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Int @fdc_generated(from: "Recipe.servings", purpose: QUERY_SUM)
+  """
+  ✨ Average the `cookTime` field in the `Recipe` table.
+  """
+  cookTime_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Recipe.cookTime", purpose: QUERY_AVG)
+  """
+  ✨ Average the `prepTime` field in the `Recipe` table.
+  """
+  prepTime_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Recipe.prepTime", purpose: QUERY_AVG)
+  """
+  ✨ Average the `servings` field in the `Recipe` table.
+  """
+  servings_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "Recipe.servings", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `cookTime` field in the `Recipe` table.
+  """
+  cookTime_min: Int @fdc_generated(from: "Recipe.cookTime", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `createdAt` field in the `Recipe` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "Recipe.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `prepTime` field in the `Recipe` table.
+  """
+  prepTime_min: Int @fdc_generated(from: "Recipe.prepTime", purpose: QUERY_MIN)
+  """
+  ✨ Minimum of the `servings` field in the `Recipe` table.
+  """
+  servings_min: Int @fdc_generated(from: "Recipe.servings", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `cookTime` field in the `Recipe` table.
+  """
+  cookTime_max: Int @fdc_generated(from: "Recipe.cookTime", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `createdAt` field in the `Recipe` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "Recipe.createdAt", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `prepTime` field in the `Recipe` table.
+  """
+  prepTime_max: Int @fdc_generated(from: "Recipe.prepTime", purpose: QUERY_MAX)
+  """
+  ✨ Maximum of the `servings` field in the `Recipe` table.
+  """
+  servings_max: Int @fdc_generated(from: "Recipe.servings", purpose: QUERY_MAX)
+}
+extend type RecipeIngredient {
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "RecipeIngredient", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table.
+  """
+  _count: Int! @fdc_generated(from: "RecipeIngredient.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table where the `ingredientId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  ingredientId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient.ingredientId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table where the `notes` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  notes_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient.notes", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table where the `quantity` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  quantity_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient.quantity", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table where the `recipeId` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  recipeId_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient.recipeId", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `RecipeIngredient` table where the `unit` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  unit_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "RecipeIngredient.unit", purpose: QUERY_COUNT)
+  """
+  ✨ Sum the `quantity` field in the `RecipeIngredient` table.
+  """
+  quantity_sum(
+    """
+    Set to true to sum the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RecipeIngredient.quantity", purpose: QUERY_SUM)
+  """
+  ✨ Average the `quantity` field in the `RecipeIngredient` table.
+  """
+  quantity_avg(
+    """
+    Set to true to average the distinct values.
+    """
+    distinct: Boolean = false
+  ): Float @fdc_generated(from: "RecipeIngredient.quantity", purpose: QUERY_AVG)
+  """
+  ✨ Minimum of the `quantity` field in the `RecipeIngredient` table.
+  """
+  quantity_min: Float @fdc_generated(from: "RecipeIngredient.quantity", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `quantity` field in the `RecipeIngredient` table.
+  """
+  quantity_max: Float @fdc_generated(from: "RecipeIngredient.quantity", purpose: QUERY_MAX)
+}
+extend type User {
+  """
+  ✨ List `GroceryListItem` objects in a one-to-many relationship (where `GroceryListItem`.`user` is this object).
+  """
+  groceryListItems_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: GroceryListItem_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [GroceryListItem_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: GroceryListItem_Having
+  ): [GroceryListItem!]! @fdc_generated(from: "GroceryListItem.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `MealPlan` objects in a one-to-many relationship (where `MealPlan`.`user` is this object).
+  """
+  mealPlans_on_user(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: MealPlan_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [MealPlan_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: MealPlan_Having
+  ): [MealPlan!]! @fdc_generated(from: "MealPlan.user", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  ✨ List `Recipe` objects in a one-to-many relationship (where `Recipe`.`author` is this object).
+  """
+  recipes_on_author(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Recipe_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Recipe_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Recipe_Having
+  ): [Recipe!]! @fdc_generated(from: "Recipe.author", purpose: QUERY_MULTIPLE_ONE_TO_MANY)
+  """
+  Implicit metadata field that cannot be written. It provides extra information about query results.
+  """
+  _metadata: _Metadata @fdc_generated(from: "User", purpose: METADATA_FIELD)
+  """
+  ✨ Count the number of rows in the `User` table.
+  """
+  _count: Int! @fdc_generated(from: "User.", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `createdAt` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  createdAt_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.createdAt", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `displayName` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  displayName_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.displayName", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `email` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  email_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.email", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `id` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  id_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.id", purpose: QUERY_COUNT)
+  """
+  ✨ Count the number of rows in the `User` table where the `photoUrl` field is non-null. Pass the `distinct` argument to instead count the number of distinct values.
+  """
+  photoUrl_count(
+    """
+    Set to true to count the number of distinct values.
+    """
+    distinct: Boolean = false
+  ): Int! @fdc_generated(from: "User.photoUrl", purpose: QUERY_COUNT)
+  """
+  ✨ Minimum of the `createdAt` field in the `User` table.
+  """
+  createdAt_min: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MIN)
+  """
+  ✨ Maximum of the `createdAt` field in the `User` table.
+  """
+  createdAt_max: Timestamp @fdc_generated(from: "User.createdAt", purpose: QUERY_MAX)
+}

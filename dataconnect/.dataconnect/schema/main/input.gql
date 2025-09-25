@@ -1,0 +1,2363 @@
+"""
+✨ `GroceryListItem_KeyOutput` returns the primary key fields of table type `GroceryListItem`.
+
+It has the same format as `GroceryListItem_Key`, but is only used as mutation return value.
+"""
+scalar GroceryListItem_KeyOutput
+"""
+✨ `Ingredient_KeyOutput` returns the primary key fields of table type `Ingredient`.
+
+It has the same format as `Ingredient_Key`, but is only used as mutation return value.
+"""
+scalar Ingredient_KeyOutput
+"""
+✨ `MealPlan_KeyOutput` returns the primary key fields of table type `MealPlan`.
+
+It has the same format as `MealPlan_Key`, but is only used as mutation return value.
+"""
+scalar MealPlan_KeyOutput
+"""
+✨ `PlannedMeal_KeyOutput` returns the primary key fields of table type `PlannedMeal`.
+
+It has the same format as `PlannedMeal_Key`, but is only used as mutation return value.
+"""
+scalar PlannedMeal_KeyOutput
+"""
+✨ `Recipe_KeyOutput` returns the primary key fields of table type `Recipe`.
+
+It has the same format as `Recipe_Key`, but is only used as mutation return value.
+"""
+scalar Recipe_KeyOutput
+"""
+✨ `RecipeIngredient_KeyOutput` returns the primary key fields of table type `RecipeIngredient`.
+
+It has the same format as `RecipeIngredient_Key`, but is only used as mutation return value.
+"""
+scalar RecipeIngredient_KeyOutput
+"""
+✨ `User_KeyOutput` returns the primary key fields of table type `User`.
+
+It has the same format as `User_Key`, but is only used as mutation return value.
+"""
+scalar User_KeyOutput
+"""
+✨ Generated data input type for table 'GroceryListItem'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input GroceryListItem_Data {
+  """
+  ✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`userId` of type `UUID`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `GroceryListItem`.`userId` of type `UUID`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`user` of type `User`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `GroceryListItem`.`category` of type `String`
+  """
+  category: String
+  """
+  ✨ `_expr` server value variant of `category` (✨ Generated from Field `GroceryListItem`.`category` of type `String`)
+  """
+  category_expr: String_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost` of type `Float`
+  """
+  cost: Float
+  """
+  ✨ `_expr` server value variant of `cost` (✨ Generated from Field `GroceryListItem`.`cost` of type `Float`)
+  """
+  cost_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `cost` (✨ Generated from Field `GroceryListItem`.`cost` of type `Float`)
+  """
+  cost_update: [Float_Update!]
+  """
+  ✨ Generated from Field `GroceryListItem`.`custom` of type `Boolean`
+  """
+  custom: Boolean
+  """
+  ✨ `_expr` server value variant of `custom` (✨ Generated from Field `GroceryListItem`.`custom` of type `Boolean`)
+  """
+  custom_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`ingredientName` of type `String!`
+  """
+  ingredientName: String
+  """
+  ✨ `_expr` server value variant of `ingredientName` (✨ Generated from Field `GroceryListItem`.`ingredientName` of type `String!`)
+  """
+  ingredientName_expr: String_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: UUID
+  """
+  ✨ `_expr` server value variant of `mealPlanId` (✨ Generated from Field `GroceryListItem`.`mealPlanId` of type `UUID!`)
+  """
+  mealPlanId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`purchased` of type `Boolean`
+  """
+  purchased: Boolean
+  """
+  ✨ `_expr` server value variant of `purchased` (✨ Generated from Field `GroceryListItem`.`purchased` of type `Boolean`)
+  """
+  purchased_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity` of type `Float!`
+  """
+  quantity: Float
+  """
+  ✨ `_expr` server value variant of `quantity` (✨ Generated from Field `GroceryListItem`.`quantity` of type `Float!`)
+  """
+  quantity_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `quantity` (✨ Generated from Field `GroceryListItem`.`quantity` of type `Float!`)
+  """
+  quantity_update: [Float_Update!]
+  """
+  ✨ Generated from Field `GroceryListItem`.`unit` of type `String!`
+  """
+  unit: String
+  """
+  ✨ `_expr` server value variant of `unit` (✨ Generated from Field `GroceryListItem`.`unit` of type `String!`)
+  """
+  unit_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'GroceryListItem'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input GroceryListItem_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [GroceryListItem_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: GroceryListItem_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [GroceryListItem_Filter!]
+  """
+  ✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`userId` of type `UUID`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`user` of type `User`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`category` of type `String`
+  """
+  category: String_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost` of type `Float`
+  """
+  cost: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`custom` of type `Boolean`
+  """
+  custom: Boolean_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`ingredientName` of type `String!`
+  """
+  ingredientName: String_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: UUID_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`purchased` of type `Boolean`
+  """
+  purchased: Boolean_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity` of type `Float!`
+  """
+  quantity: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`unit` of type `String!`
+  """
+  unit: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'GroceryListItem'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input GroceryListItem_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [GroceryListItem_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: GroceryListItem_Filter
+}
+"""
+✨ Generated having input type for table 'GroceryListItem'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input GroceryListItem_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [GroceryListItem_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: GroceryListItem_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [GroceryListItem_Having!]
+  """
+  ✨ Generated from Field `GroceryListItem`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`category_count` of type `Int!`
+  """
+  category_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_count` of type `Int!`
+  """
+  cost_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`custom_count` of type `Int!`
+  """
+  custom_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`ingredientName_count` of type `Int!`
+  """
+  ingredientName_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`mealPlanId_count` of type `Int!`
+  """
+  mealPlanId_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`purchased_count` of type `Int!`
+  """
+  purchased_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_count` of type `Int!`
+  """
+  quantity_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`unit_count` of type `Int!`
+  """
+  unit_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_sum` of type `Float`
+  """
+  cost_sum: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_sum` of type `Float`
+  """
+  quantity_sum: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_avg` of type `Float`
+  """
+  cost_avg: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_avg` of type `Float`
+  """
+  quantity_avg: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_min` of type `Float`
+  """
+  cost_min: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_min` of type `Float`
+  """
+  quantity_min: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_max` of type `Float`
+  """
+  cost_max: Float_Filter
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_max` of type `Float`
+  """
+  quantity_max: Float_Filter
+}
+"""
+✨ Generated key input type for table 'GroceryListItem'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input GroceryListItem_Key {
+  """
+  ✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'GroceryListItem'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input GroceryListItem_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: GroceryListItem_Filter
+}
+"""
+✨ Generated order input type for table 'GroceryListItem'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input GroceryListItem_Order {
+  """
+  ✨ Generated from Field `GroceryListItem`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`userId` of type `UUID`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`user` of type `User`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `GroceryListItem`.`category` of type `String`
+  """
+  category: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost` of type `Float`
+  """
+  cost: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`custom` of type `Boolean`
+  """
+  custom: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`ingredientName` of type `String!`
+  """
+  ingredientName: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`purchased` of type `Boolean`
+  """
+  purchased: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity` of type `Float!`
+  """
+  quantity: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`unit` of type `String!`
+  """
+  unit: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`category_count` of type `Int!`
+  """
+  category_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_count` of type `Int!`
+  """
+  cost_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`custom_count` of type `Int!`
+  """
+  custom_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`ingredientName_count` of type `Int!`
+  """
+  ingredientName_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`mealPlanId_count` of type `Int!`
+  """
+  mealPlanId_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`purchased_count` of type `Int!`
+  """
+  purchased_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_count` of type `Int!`
+  """
+  quantity_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`unit_count` of type `Int!`
+  """
+  unit_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_sum` of type `Float`
+  """
+  cost_sum: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_sum` of type `Float`
+  """
+  quantity_sum: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_avg` of type `Float`
+  """
+  cost_avg: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_avg` of type `Float`
+  """
+  quantity_avg: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_min` of type `Float`
+  """
+  cost_min: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_min` of type `Float`
+  """
+  quantity_min: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`cost_max` of type `Float`
+  """
+  cost_max: OrderDirection
+  """
+  ✨ Generated from Field `GroceryListItem`.`quantity_max` of type `Float`
+  """
+  quantity_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Ingredient'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Ingredient_Data {
+  """
+  ✨ Generated from Field `Ingredient`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Ingredient`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Ingredient`.`category` of type `String`
+  """
+  category: String
+  """
+  ✨ `_expr` server value variant of `category` (✨ Generated from Field `Ingredient`.`category` of type `String`)
+  """
+  category_expr: String_Expr
+  """
+  ✨ Generated from Field `Ingredient`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `Ingredient`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Ingredient'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Ingredient_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Ingredient_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Ingredient_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Ingredient_Filter!]
+  """
+  ✨ Generated from Field `Ingredient`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`category` of type `String`
+  """
+  category: String_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`recipeIngredients_on_ingredient` of type `[RecipeIngredient!]!`
+  """
+  recipeIngredients_on_ingredient: RecipeIngredient_ListFilter
+  """
+  ✨ Generated from Field `Ingredient`.`recipes_via_RecipeIngredient` of type `[Recipe!]!`
+  """
+  recipes_via_RecipeIngredient: Recipe_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Ingredient'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Ingredient_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Ingredient_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Ingredient_Filter
+}
+"""
+✨ Generated having input type for table 'Ingredient'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Ingredient_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Ingredient_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Ingredient_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Ingredient_Having!]
+  """
+  ✨ Generated from Field `Ingredient`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`category_count` of type `Int!`
+  """
+  category_count: Int_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Ingredient`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Ingredient'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Ingredient_Key {
+  """
+  ✨ Generated from Field `Ingredient`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Ingredient`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Ingredient'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Ingredient_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Ingredient_Filter
+}
+"""
+✨ Generated order input type for table 'Ingredient'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Ingredient_Order {
+  """
+  ✨ Generated from Field `Ingredient`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`category` of type `String`
+  """
+  category: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`category_count` of type `Int!`
+  """
+  category_count: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Ingredient`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+}
+"""
+✨ Generated data input type for table 'MealPlan'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input MealPlan_Data {
+  """
+  ✨ Generated from Field `MealPlan`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `MealPlan`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `MealPlan`.`userId` of type `UUID`
+  """
+  userId: UUID
+  """
+  ✨ `_expr` server value variant of `userId` (✨ Generated from Field `MealPlan`.`userId` of type `UUID`)
+  """
+  userId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `MealPlan`.`user` of type `User`
+  """
+  user: User_Key
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `MealPlan`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `MealPlan`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `MealPlan`.`endDate` of type `Date!`
+  """
+  endDate: Date
+  """
+  ✨ `_date` server value variant of `endDate` (✨ Generated from Field `MealPlan`.`endDate` of type `Date!`)
+  """
+  endDate_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `endDate` (✨ Generated from Field `MealPlan`.`endDate` of type `Date!`)
+  """
+  endDate_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `endDate` (✨ Generated from Field `MealPlan`.`endDate` of type `Date!`)
+  """
+  endDate_update: [Date_Update!]
+  """
+  ✨ Generated from Field `MealPlan`.`name` of type `String!`
+  """
+  name: String
+  """
+  ✨ `_expr` server value variant of `name` (✨ Generated from Field `MealPlan`.`name` of type `String!`)
+  """
+  name_expr: String_Expr
+  """
+  ✨ Generated from Field `MealPlan`.`startDate` of type `Date!`
+  """
+  startDate: Date
+  """
+  ✨ `_date` server value variant of `startDate` (✨ Generated from Field `MealPlan`.`startDate` of type `Date!`)
+  """
+  startDate_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `startDate` (✨ Generated from Field `MealPlan`.`startDate` of type `Date!`)
+  """
+  startDate_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `startDate` (✨ Generated from Field `MealPlan`.`startDate` of type `Date!`)
+  """
+  startDate_update: [Date_Update!]
+}
+"""
+✨ Generated filter input type for table 'MealPlan'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input MealPlan_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [MealPlan_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: MealPlan_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [MealPlan_Filter!]
+  """
+  ✨ Generated from Field `MealPlan`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`userId` of type `UUID`
+  """
+  userId: UUID_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`user` of type `User`
+  """
+  user: User_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`endDate` of type `Date!`
+  """
+  endDate: Date_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`name` of type `String!`
+  """
+  name: String_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`startDate` of type `Date!`
+  """
+  startDate: Date_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`plannedMeals_on_mealPlan` of type `[PlannedMeal!]!`
+  """
+  plannedMeals_on_mealPlan: PlannedMeal_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'MealPlan'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input MealPlan_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [MealPlan_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: MealPlan_Filter
+}
+"""
+✨ Generated having input type for table 'MealPlan'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input MealPlan_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [MealPlan_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: MealPlan_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [MealPlan_Having!]
+  """
+  ✨ Generated from Field `MealPlan`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_count` of type `Int!`
+  """
+  endDate_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`name_count` of type `Int!`
+  """
+  name_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_count` of type `Int!`
+  """
+  startDate_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`userId_count` of type `Int!`
+  """
+  userId_count: Int_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_min` of type `Date`
+  """
+  endDate_min: Date_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_min` of type `Date`
+  """
+  startDate_min: Date_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_max` of type `Date`
+  """
+  endDate_max: Date_Filter
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_max` of type `Date`
+  """
+  startDate_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'MealPlan'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input MealPlan_Key {
+  """
+  ✨ Generated from Field `MealPlan`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `MealPlan`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'MealPlan'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input MealPlan_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: MealPlan_Filter
+}
+"""
+✨ Generated order input type for table 'MealPlan'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input MealPlan_Order {
+  """
+  ✨ Generated from Field `MealPlan`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`userId` of type `UUID`
+  """
+  userId: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`user` of type `User`
+  """
+  user: User_Order
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`endDate` of type `Date!`
+  """
+  endDate: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`name` of type `String!`
+  """
+  name: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`startDate` of type `Date!`
+  """
+  startDate: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_count` of type `Int!`
+  """
+  endDate_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`name_count` of type `Int!`
+  """
+  name_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_count` of type `Int!`
+  """
+  startDate_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`userId_count` of type `Int!`
+  """
+  userId_count: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_min` of type `Date`
+  """
+  endDate_min: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_min` of type `Date`
+  """
+  startDate_min: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`endDate_max` of type `Date`
+  """
+  endDate_max: OrderDirection
+  """
+  ✨ Generated from Field `MealPlan`.`startDate_max` of type `Date`
+  """
+  startDate_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'PlannedMeal'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input PlannedMeal_Data {
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: UUID
+  """
+  ✨ `_expr` server value variant of `mealPlanId` (✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`)
+  """
+  mealPlanId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID
+  """
+  ✨ `_expr` server value variant of `recipeId` (✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`)
+  """
+  recipeId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`date` of type `Date!`
+  """
+  date: Date
+  """
+  ✨ `_date` server value variant of `date` (✨ Generated from Field `PlannedMeal`.`date` of type `Date!`)
+  """
+  date_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `date` (✨ Generated from Field `PlannedMeal`.`date` of type `Date!`)
+  """
+  date_expr: Date_Expr
+  """
+  ✨ `_update` server value variant of `date` (✨ Generated from Field `PlannedMeal`.`date` of type `Date!`)
+  """
+  date_update: [Date_Update!]
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`
+  """
+  mealType: String
+  """
+  ✨ `_expr` server value variant of `mealType` (✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`)
+  """
+  mealType_expr: String_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlan` of type `MealPlan!`
+  """
+  mealPlan: MealPlan_Key
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Key
+  """
+  ✨ Generated from Field `PlannedMeal`.`notes` of type `String`
+  """
+  notes: String
+  """
+  ✨ `_expr` server value variant of `notes` (✨ Generated from Field `PlannedMeal`.`notes` of type `String`)
+  """
+  notes_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'PlannedMeal'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input PlannedMeal_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [PlannedMeal_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: PlannedMeal_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [PlannedMeal_Filter!]
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: UUID_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`date` of type `Date!`
+  """
+  date: Date_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`
+  """
+  mealType: String_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlan` of type `MealPlan!`
+  """
+  mealPlan: MealPlan_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`notes` of type `String`
+  """
+  notes: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'PlannedMeal'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input PlannedMeal_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [PlannedMeal_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: PlannedMeal_Filter
+}
+"""
+✨ Generated having input type for table 'PlannedMeal'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input PlannedMeal_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [PlannedMeal_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: PlannedMeal_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [PlannedMeal_Having!]
+  """
+  ✨ Generated from Field `PlannedMeal`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_count` of type `Int!`
+  """
+  date_count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId_count` of type `Int!`
+  """
+  mealPlanId_count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType_count` of type `Int!`
+  """
+  mealType_count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`notes_count` of type `Int!`
+  """
+  notes_count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId_count` of type `Int!`
+  """
+  recipeId_count: Int_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_min` of type `Date`
+  """
+  date_min: Date_Filter
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_max` of type `Date`
+  """
+  date_max: Date_Filter
+}
+"""
+✨ Generated key input type for table 'PlannedMeal'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input PlannedMeal_Key {
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: UUID
+  """
+  ✨ `_expr` server value variant of `mealPlanId` (✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`)
+  """
+  mealPlanId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID
+  """
+  ✨ `_expr` server value variant of `recipeId` (✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`)
+  """
+  recipeId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`date` of type `Date!`
+  """
+  date: Date
+  """
+  ✨ `_date` server value variant of `date` (✨ Generated from Field `PlannedMeal`.`date` of type `Date!`)
+  """
+  date_date: Date_Relative
+  """
+  ✨ `_expr` server value variant of `date` (✨ Generated from Field `PlannedMeal`.`date` of type `Date!`)
+  """
+  date_expr: Date_Expr
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`
+  """
+  mealType: String
+  """
+  ✨ `_expr` server value variant of `mealType` (✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`)
+  """
+  mealType_expr: String_Expr
+}
+"""
+✨ Generated list filter input type for table 'PlannedMeal'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input PlannedMeal_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: PlannedMeal_Filter
+}
+"""
+✨ Generated order input type for table 'PlannedMeal'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input PlannedMeal_Order {
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId` of type `UUID!`
+  """
+  mealPlanId: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId` of type `UUID!`
+  """
+  recipeId: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`date` of type `Date!`
+  """
+  date: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType` of type `String!`
+  """
+  mealType: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlan` of type `MealPlan!`
+  """
+  mealPlan: MealPlan_Order
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Order
+  """
+  ✨ Generated from Field `PlannedMeal`.`notes` of type `String`
+  """
+  notes: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_count` of type `Int!`
+  """
+  date_count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealPlanId_count` of type `Int!`
+  """
+  mealPlanId_count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`mealType_count` of type `Int!`
+  """
+  mealType_count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`notes_count` of type `Int!`
+  """
+  notes_count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`recipeId_count` of type `Int!`
+  """
+  recipeId_count: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_min` of type `Date`
+  """
+  date_min: OrderDirection
+  """
+  ✨ Generated from Field `PlannedMeal`.`date_max` of type `Date`
+  """
+  date_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'Recipe'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input Recipe_Data {
+  """
+  ✨ Generated from Field `Recipe`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Recipe`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Recipe`.`authorId` of type `UUID`
+  """
+  authorId: UUID
+  """
+  ✨ `_expr` server value variant of `authorId` (✨ Generated from Field `Recipe`.`authorId` of type `UUID`)
+  """
+  authorId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `Recipe`.`author` of type `User`
+  """
+  author: User_Key
+  """
+  ✨ Generated from Field `Recipe`.`cookTime` of type `Int!`
+  """
+  cookTime: Int
+  """
+  ✨ `_expr` server value variant of `cookTime` (✨ Generated from Field `Recipe`.`cookTime` of type `Int!`)
+  """
+  cookTime_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `cookTime` (✨ Generated from Field `Recipe`.`cookTime` of type `Int!`)
+  """
+  cookTime_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `Recipe`.`cuisine` of type `String`
+  """
+  cuisine: String
+  """
+  ✨ `_expr` server value variant of `cuisine` (✨ Generated from Field `Recipe`.`cuisine` of type `String`)
+  """
+  cuisine_expr: String_Expr
+  """
+  ✨ Generated from Field `Recipe`.`description` of type `String`
+  """
+  description: String
+  """
+  ✨ `_expr` server value variant of `description` (✨ Generated from Field `Recipe`.`description` of type `String`)
+  """
+  description_expr: String_Expr
+  """
+  ✨ Generated from Field `Recipe`.`dietaryRestrictions` of type `[String]`
+  """
+  dietaryRestrictions: [String!]
+  """
+  ✨ `_update` server value variant of `dietaryRestrictions` (✨ Generated from Field `Recipe`.`dietaryRestrictions` of type `[String]`)
+  """
+  dietaryRestrictions_update: [String_ListUpdate!]
+  """
+  ✨ Generated from Field `Recipe`.`imageUrl` of type `String`
+  """
+  imageUrl: String
+  """
+  ✨ `_expr` server value variant of `imageUrl` (✨ Generated from Field `Recipe`.`imageUrl` of type `String`)
+  """
+  imageUrl_expr: String_Expr
+  """
+  ✨ Generated from Field `Recipe`.`instructions` of type `String!`
+  """
+  instructions: String
+  """
+  ✨ `_expr` server value variant of `instructions` (✨ Generated from Field `Recipe`.`instructions` of type `String!`)
+  """
+  instructions_expr: String_Expr
+  """
+  ✨ Generated from Field `Recipe`.`prepTime` of type `Int!`
+  """
+  prepTime: Int
+  """
+  ✨ `_expr` server value variant of `prepTime` (✨ Generated from Field `Recipe`.`prepTime` of type `Int!`)
+  """
+  prepTime_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `prepTime` (✨ Generated from Field `Recipe`.`prepTime` of type `Int!`)
+  """
+  prepTime_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Recipe`.`servings` of type `Int!`
+  """
+  servings: Int
+  """
+  ✨ `_expr` server value variant of `servings` (✨ Generated from Field `Recipe`.`servings` of type `Int!`)
+  """
+  servings_expr: Int_Expr
+  """
+  ✨ `_update` server value variant of `servings` (✨ Generated from Field `Recipe`.`servings` of type `Int!`)
+  """
+  servings_update: [Int_Update!]
+  """
+  ✨ Generated from Field `Recipe`.`shared` of type `Boolean`
+  """
+  shared: Boolean
+  """
+  ✨ `_expr` server value variant of `shared` (✨ Generated from Field `Recipe`.`shared` of type `Boolean`)
+  """
+  shared_expr: Boolean_Expr
+  """
+  ✨ Generated from Field `Recipe`.`title` of type `String!`
+  """
+  title: String
+  """
+  ✨ `_expr` server value variant of `title` (✨ Generated from Field `Recipe`.`title` of type `String!`)
+  """
+  title_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'Recipe'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Recipe_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [Recipe_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: Recipe_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [Recipe_Filter!]
+  """
+  ✨ Generated from Field `Recipe`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `Recipe`.`authorId` of type `UUID`
+  """
+  authorId: UUID_Filter
+  """
+  ✨ Generated from Field `Recipe`.`author` of type `User`
+  """
+  author: User_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime` of type `Int!`
+  """
+  cookTime: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cuisine` of type `String`
+  """
+  cuisine: String_Filter
+  """
+  ✨ Generated from Field `Recipe`.`description` of type `String`
+  """
+  description: String_Filter
+  """
+  ✨ Generated from Field `Recipe`.`dietaryRestrictions` of type `[String]`
+  """
+  dietaryRestrictions: String_ListFilter
+  """
+  ✨ Generated from Field `Recipe`.`imageUrl` of type `String`
+  """
+  imageUrl: String_Filter
+  """
+  ✨ Generated from Field `Recipe`.`instructions` of type `String!`
+  """
+  instructions: String_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime` of type `Int!`
+  """
+  prepTime: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings` of type `Int!`
+  """
+  servings: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`shared` of type `Boolean`
+  """
+  shared: Boolean_Filter
+  """
+  ✨ Generated from Field `Recipe`.`title` of type `String!`
+  """
+  title: String_Filter
+  """
+  ✨ Generated from Field `Recipe`.`plannedMeals_on_recipe` of type `[PlannedMeal!]!`
+  """
+  plannedMeals_on_recipe: PlannedMeal_ListFilter
+  """
+  ✨ Generated from Field `Recipe`.`recipeIngredients_on_recipe` of type `[RecipeIngredient!]!`
+  """
+  recipeIngredients_on_recipe: RecipeIngredient_ListFilter
+  """
+  ✨ Generated from Field `Recipe`.`ingredients_via_RecipeIngredient` of type `[Ingredient!]!`
+  """
+  ingredients_via_RecipeIngredient: Ingredient_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'Recipe'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input Recipe_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [Recipe_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: Recipe_Filter
+}
+"""
+✨ Generated having input type for table 'Recipe'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input Recipe_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [Recipe_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: Recipe_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [Recipe_Having!]
+  """
+  ✨ Generated from Field `Recipe`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`authorId_count` of type `Int!`
+  """
+  authorId_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_count` of type `Int!`
+  """
+  cookTime_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cuisine_count` of type `Int!`
+  """
+  cuisine_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`description_count` of type `Int!`
+  """
+  description_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`imageUrl_count` of type `Int!`
+  """
+  imageUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`instructions_count` of type `Int!`
+  """
+  instructions_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_count` of type `Int!`
+  """
+  prepTime_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings_count` of type `Int!`
+  """
+  servings_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`shared_count` of type `Int!`
+  """
+  shared_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`title_count` of type `Int!`
+  """
+  title_count: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_sum` of type `Int`
+  """
+  cookTime_sum: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_sum` of type `Int`
+  """
+  prepTime_sum: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings_sum` of type `Int`
+  """
+  servings_sum: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_avg` of type `Float`
+  """
+  cookTime_avg: Float_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_avg` of type `Float`
+  """
+  prepTime_avg: Float_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings_avg` of type `Float`
+  """
+  servings_avg: Float_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_min` of type `Int`
+  """
+  cookTime_min: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_min` of type `Int`
+  """
+  prepTime_min: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings_min` of type `Int`
+  """
+  servings_min: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_max` of type `Int`
+  """
+  cookTime_max: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_max` of type `Int`
+  """
+  prepTime_max: Int_Filter
+  """
+  ✨ Generated from Field `Recipe`.`servings_max` of type `Int`
+  """
+  servings_max: Int_Filter
+}
+"""
+✨ Generated key input type for table 'Recipe'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input Recipe_Key {
+  """
+  ✨ Generated from Field `Recipe`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `Recipe`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'Recipe'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input Recipe_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: Recipe_Filter
+}
+"""
+✨ Generated order input type for table 'Recipe'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input Recipe_Order {
+  """
+  ✨ Generated from Field `Recipe`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`authorId` of type `UUID`
+  """
+  authorId: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`author` of type `User`
+  """
+  author: User_Order
+  """
+  ✨ Generated from Field `Recipe`.`cookTime` of type `Int!`
+  """
+  cookTime: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cuisine` of type `String`
+  """
+  cuisine: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`description` of type `String`
+  """
+  description: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`imageUrl` of type `String`
+  """
+  imageUrl: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`instructions` of type `String!`
+  """
+  instructions: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime` of type `Int!`
+  """
+  prepTime: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings` of type `Int!`
+  """
+  servings: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`shared` of type `Boolean`
+  """
+  shared: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`title` of type `String!`
+  """
+  title: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`authorId_count` of type `Int!`
+  """
+  authorId_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_count` of type `Int!`
+  """
+  cookTime_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cuisine_count` of type `Int!`
+  """
+  cuisine_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`description_count` of type `Int!`
+  """
+  description_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`imageUrl_count` of type `Int!`
+  """
+  imageUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`instructions_count` of type `Int!`
+  """
+  instructions_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_count` of type `Int!`
+  """
+  prepTime_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings_count` of type `Int!`
+  """
+  servings_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`shared_count` of type `Int!`
+  """
+  shared_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`title_count` of type `Int!`
+  """
+  title_count: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_sum` of type `Int`
+  """
+  cookTime_sum: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_sum` of type `Int`
+  """
+  prepTime_sum: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings_sum` of type `Int`
+  """
+  servings_sum: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_avg` of type `Float`
+  """
+  cookTime_avg: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_avg` of type `Float`
+  """
+  prepTime_avg: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings_avg` of type `Float`
+  """
+  servings_avg: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_min` of type `Int`
+  """
+  cookTime_min: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_min` of type `Int`
+  """
+  prepTime_min: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings_min` of type `Int`
+  """
+  servings_min: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`cookTime_max` of type `Int`
+  """
+  cookTime_max: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`prepTime_max` of type `Int`
+  """
+  prepTime_max: OrderDirection
+  """
+  ✨ Generated from Field `Recipe`.`servings_max` of type `Int`
+  """
+  servings_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'RecipeIngredient'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input RecipeIngredient_Data {
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID
+  """
+  ✨ `_expr` server value variant of `recipeId` (✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`)
+  """
+  recipeId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`
+  """
+  ingredientId: UUID
+  """
+  ✨ `_expr` server value variant of `ingredientId` (✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`)
+  """
+  ingredientId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredient` of type `Ingredient!`
+  """
+  ingredient: Ingredient_Key
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Key
+  """
+  ✨ Generated from Field `RecipeIngredient`.`notes` of type `String`
+  """
+  notes: String
+  """
+  ✨ `_expr` server value variant of `notes` (✨ Generated from Field `RecipeIngredient`.`notes` of type `String`)
+  """
+  notes_expr: String_Expr
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity` of type `Float!`
+  """
+  quantity: Float
+  """
+  ✨ `_expr` server value variant of `quantity` (✨ Generated from Field `RecipeIngredient`.`quantity` of type `Float!`)
+  """
+  quantity_expr: Float_Expr
+  """
+  ✨ `_update` server value variant of `quantity` (✨ Generated from Field `RecipeIngredient`.`quantity` of type `Float!`)
+  """
+  quantity_update: [Float_Update!]
+  """
+  ✨ Generated from Field `RecipeIngredient`.`unit` of type `String!`
+  """
+  unit: String
+  """
+  ✨ `_expr` server value variant of `unit` (✨ Generated from Field `RecipeIngredient`.`unit` of type `String!`)
+  """
+  unit_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'RecipeIngredient'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RecipeIngredient_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [RecipeIngredient_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: RecipeIngredient_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [RecipeIngredient_Filter!]
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`
+  """
+  ingredientId: UUID_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredient` of type `Ingredient!`
+  """
+  ingredient: Ingredient_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`notes` of type `String`
+  """
+  notes: String_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity` of type `Float!`
+  """
+  quantity: Float_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`unit` of type `String!`
+  """
+  unit: String_Filter
+}
+"""
+✨ Generated first-row input type for table 'RecipeIngredient'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input RecipeIngredient_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [RecipeIngredient_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: RecipeIngredient_Filter
+}
+"""
+✨ Generated having input type for table 'RecipeIngredient'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input RecipeIngredient_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [RecipeIngredient_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: RecipeIngredient_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [RecipeIngredient_Having!]
+  """
+  ✨ Generated from Field `RecipeIngredient`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId_count` of type `Int!`
+  """
+  ingredientId_count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`notes_count` of type `Int!`
+  """
+  notes_count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_count` of type `Int!`
+  """
+  quantity_count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId_count` of type `Int!`
+  """
+  recipeId_count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`unit_count` of type `Int!`
+  """
+  unit_count: Int_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_sum` of type `Float`
+  """
+  quantity_sum: Float_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_avg` of type `Float`
+  """
+  quantity_avg: Float_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_min` of type `Float`
+  """
+  quantity_min: Float_Filter
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_max` of type `Float`
+  """
+  quantity_max: Float_Filter
+}
+"""
+✨ Generated key input type for table 'RecipeIngredient'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input RecipeIngredient_Key {
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`
+  """
+  recipeId: UUID
+  """
+  ✨ `_expr` server value variant of `recipeId` (✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`)
+  """
+  recipeId_expr: UUID_Expr
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`
+  """
+  ingredientId: UUID
+  """
+  ✨ `_expr` server value variant of `ingredientId` (✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`)
+  """
+  ingredientId_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'RecipeIngredient'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input RecipeIngredient_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: RecipeIngredient_Filter
+}
+"""
+✨ Generated order input type for table 'RecipeIngredient'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input RecipeIngredient_Order {
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId` of type `UUID!`
+  """
+  recipeId: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId` of type `UUID!`
+  """
+  ingredientId: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredient` of type `Ingredient!`
+  """
+  ingredient: Ingredient_Order
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipe` of type `Recipe!`
+  """
+  recipe: Recipe_Order
+  """
+  ✨ Generated from Field `RecipeIngredient`.`notes` of type `String`
+  """
+  notes: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity` of type `Float!`
+  """
+  quantity: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`unit` of type `String!`
+  """
+  unit: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`ingredientId_count` of type `Int!`
+  """
+  ingredientId_count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`notes_count` of type `Int!`
+  """
+  notes_count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_count` of type `Int!`
+  """
+  quantity_count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`recipeId_count` of type `Int!`
+  """
+  recipeId_count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`unit_count` of type `Int!`
+  """
+  unit_count: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_sum` of type `Float`
+  """
+  quantity_sum: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_avg` of type `Float`
+  """
+  quantity_avg: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_min` of type `Float`
+  """
+  quantity_min: OrderDirection
+  """
+  ✨ Generated from Field `RecipeIngredient`.`quantity_max` of type `Float`
+  """
+  quantity_max: OrderDirection
+}
+"""
+✨ Generated data input type for table 'User'. It includes all necessary fields for creating or upserting rows into table.
+"""
+input User_Data {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp
+  """
+  ✨ `_expr` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_expr: Timestamp_Expr
+  """
+  ✨ `_time` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_time: Timestamp_Relative
+  """
+  ✨ `_update` server value variant of `createdAt` (✨ Generated from Field `User`.`createdAt` of type `Timestamp!`)
+  """
+  createdAt_update: [Timestamp_Update!]
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String
+  """
+  ✨ `_expr` server value variant of `displayName` (✨ Generated from Field `User`.`displayName` of type `String!`)
+  """
+  displayName_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String
+  """
+  ✨ `_expr` server value variant of `email` (✨ Generated from Field `User`.`email` of type `String!`)
+  """
+  email_expr: String_Expr
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String
+  """
+  ✨ `_expr` server value variant of `photoUrl` (✨ Generated from Field `User`.`photoUrl` of type `String`)
+  """
+  photoUrl_expr: String_Expr
+}
+"""
+✨ Generated filter input type for table 'User'. This input allows filtering objects using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Filter {
+  """
+  Apply multiple filter conditions using `AND` logic.
+  """
+  _and: [User_Filter!]
+  """
+  Negate the result of the provided filter condition.
+  """
+  _not: User_Filter
+  """
+  Apply multiple filter conditions using `OR` logic.
+  """
+  _or: [User_Filter!]
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: String_Filter
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: String_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: String_Filter
+  """
+  ✨ Generated from Field `User`.`groceryListItems_on_user` of type `[GroceryListItem!]!`
+  """
+  groceryListItems_on_user: GroceryListItem_ListFilter
+  """
+  ✨ Generated from Field `User`.`mealPlans_on_user` of type `[MealPlan!]!`
+  """
+  mealPlans_on_user: MealPlan_ListFilter
+  """
+  ✨ Generated from Field `User`.`recipes_on_author` of type `[Recipe!]!`
+  """
+  recipes_on_author: Recipe_ListFilter
+}
+"""
+✨ Generated first-row input type for table 'User'. This input selects the first row matching the filter criteria, ordered according to the specified conditions.
+"""
+input User_FirstRow {
+  """
+  Order the result by the specified fields.
+  """
+  orderBy: [User_Order!]
+  """
+  Filters rows based on the specified conditions.
+  """
+  where: User_Filter
+}
+"""
+✨ Generated having input type for table 'User'. This input allows you to filter groups during aggregate queries using various conditions. Use `_or`, `_and`, and `_not` to compose complex filters.
+"""
+input User_Having {
+  """
+  Apply multiple Having conditions using `AND` logic.
+  """
+  _and: [User_Having!]
+  """
+  Whether to apply DISTINCT to the aggregate function.
+  """
+  _distinct: Boolean
+  """
+  Negate the result of the provided Having condition.
+  """
+  _not: User_Having
+  """
+  Apply multiple Having conditions using `OR` logic.
+  """
+  _or: [User_Having!]
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: Int_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: Timestamp_Filter
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: Timestamp_Filter
+}
+"""
+✨ Generated key input type for table 'User'. It represents the primary key fields used to uniquely identify a row in the table.
+"""
+input User_Key {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: UUID
+  """
+  ✨ `_expr` server value variant of `id` (✨ Generated from Field `User`.`id` of type `UUID!`)
+  """
+  id_expr: UUID_Expr
+}
+"""
+✨ Generated list filter input type for table 'User'. This input applies filtering logic based on the count or existence of related objects that matches certain criteria.
+"""
+input User_ListFilter {
+  """
+  The desired number of objects that match the condition (defaults to at least one).
+  """
+  count: Int_Filter = {gt:0}
+  """
+  Condition of the related objects to filter for.
+  """
+  exist: User_Filter
+}
+"""
+✨ Generated order input type for table 'User'. This input defines the sorting order of rows in query results based on one or more fields.
+"""
+input User_Order {
+  """
+  ✨ Generated from Field `User`.`id` of type `UUID!`
+  """
+  id: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt` of type `Timestamp!`
+  """
+  createdAt: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName` of type `String!`
+  """
+  displayName: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email` of type `String!`
+  """
+  email: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl` of type `String`
+  """
+  photoUrl: OrderDirection
+  """
+  ✨ Generated from Field `User`.`_count` of type `Int!`
+  """
+  _count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_count` of type `Int!`
+  """
+  createdAt_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`displayName_count` of type `Int!`
+  """
+  displayName_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`email_count` of type `Int!`
+  """
+  email_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`id_count` of type `Int!`
+  """
+  id_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`photoUrl_count` of type `Int!`
+  """
+  photoUrl_count: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_min` of type `Timestamp`
+  """
+  createdAt_min: OrderDirection
+  """
+  ✨ Generated from Field `User`.`createdAt_max` of type `Timestamp`
+  """
+  createdAt_max: OrderDirection
+}
