@@ -17,7 +17,7 @@ A volte è necessario ripartire da zero per:
 ## 📋 **Cosa Serve Prima di Iniziare**
 
 ### **Software Necessario:**
-- Node.js (versione 18 o superiore)
+- Node.js (versione 22 o superiore) - **IMPORTANTE per Angular 20**
 - Ionic CLI: `npm install -g @ionic/cli`
 - Firebase CLI: `npm install -g firebase-tools`
 - Git (per salvare il progetto)
